@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136807163093",
+    "firebase_url": "https://narutoarenaapp.firebaseio.com",
+    "project_id": "narutoarenaapp",
+    "storage_bucket": "narutoarenaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136807163093:android:0046703e2f118714f4ae5c",
+        "android_client_info": {
+          "package_name": "com.narutoarenaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136807163093-rvi5hbqbodptcbcr4426rpddbpuilao9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQeg_14TBkHiLp7xbndujYV4XXTaBcvrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136807163093-rvi5hbqbodptcbcr4426rpddbpuilao9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
