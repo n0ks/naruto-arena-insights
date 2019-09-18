@@ -2,6 +2,14 @@
   "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "object-literal-sort-keys": false,
-    "no-implicit-dependencies": [true, "dev"]
-  }
+    "no-implicit-dependencies": [true, "dev"],
+    "member-ordering": false,
+    "member-access": false
+  },
+  "exclude": [  
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }
