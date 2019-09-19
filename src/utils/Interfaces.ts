@@ -8,7 +8,7 @@ export interface NavigationType {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
 
-export interface Characters {
+export interface ICharacters {
   name: string;
   img: string;
   description: string;

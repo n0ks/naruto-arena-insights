@@ -13,9 +13,9 @@ import {
   View,
   Animated
 } from "react-native";
-import { NavigationType, Screens, Colors } from "utils";
+import { NavigationType, Screens, ICharacters } from "utils";
 import { SearchableBar } from "src/components";
-import { Button, ThemeContext } from "react-native-elements";
+import Analytics from "appcenter-analytics";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
@@ -36,7 +36,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     setQueryCharacters(text ? fuse.search(queryText) : characters);
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     Splash.hide();
 
     const getCharacters = async () => {
@@ -69,12 +69,13 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     getCharacters();
   }, []);
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item }: { item: ICharacters }) => {
     return (
       <View style={{ zIndex: 1000 }}>
         <TouchableOpacity
           onPress={() => {
             console.log("onpress");
+            Analytics.trackEvent("go_to_char_details", { name: item.name });
             navigation.navigate(Screens.CharactersDetails, { item });
           }}
           style={styles.border}
