@@ -92,7 +92,7 @@ apply from: "../../node_modules/react-native/react.gradle"
  * Upload all the APKs to the Play Store and people will download
  * the correct one based on the CPU architecture of their device.
  */
-def enableSeparateBuildPerCPUArchitecture = false
+def enableSeparateBuildPerCPUArchitecture = true
 
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
@@ -134,17 +134,14 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         multiDexEnabled true
-
-
-        
     }
     splits {
         abi {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
-            universalApk false  // If true, also generate a universal APK
+            universalApk true  // if true, also generate a universal APK
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
@@ -166,6 +163,12 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+        
+        debug {
+            debuggable true
+            signingConfig signingConfigs.release
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"}
     }
 
     
@@ -175,10 +178,7 @@ android {
         dev {
             dimension "default"
             minSdkVersion rootProject.ext.minSdkVersion
-            applicationId 'com.narutoarenaapp'
             targetSdkVersion rootProject.ext.targetSdkVersion
-            resValue "string", "build_config_package", "com.narutoarenaapp"
-
         }
     }
     
@@ -208,6 +208,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-splash-screen')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.facebook.react:react-native:+"  // From node_modules
