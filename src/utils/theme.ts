@@ -1,22 +1,22 @@
-import { ReplaceTheme, FullTheme } from "react-native-elements";
+import { FullTheme, colors, ThemeProvider } from "react-native-elements";
 
 export const theme: Partial<FullTheme> = {
   Text: {
     h1Style: {
-      fontFamily: "Coves-Bold",
-      fontSize: 28
+      color: "#000",
+      fontSize: 30
     },
     h2Style: {
-      fontFamily: "Coves-Light",
+      color: "#000",
       fontSize: 24
     },
     h3Style: {
-      fontFamily: "Coves-Light",
+      color: "#000",
       fontSize: 20
     },
     h4Style: {
-      fontFamily: "Coves-Light",
-      fontSize: 16
+      color: "#000",
+      fontSize: 12
     }
   }
 };

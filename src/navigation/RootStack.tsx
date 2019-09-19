@@ -1,23 +1,37 @@
 import React from "react";
-import { Characters } from "src/screens";
+import { Characters, FeedDemo } from "src/screens";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import { SearchableBar } from "src/components";
-import { Screens } from "utils";
-import { CharacterDetail } from "src/screens/Characters/CharacterDetail";
+import { Screens, Colors } from "utils";
+import { CharacterDetail } from "src/screens/Characters/Details/CharacterDetail";
 
 export const RootStack = createAppContainer(
   createStackNavigator({
     [Screens.Characters]: {
       screen: Characters,
-      navigationOptions: ({ navigation }) => {
+      navigationOptions: () => {
         return {
           header: null
         };
       }
     },
     [Screens.CharactersDetails]: {
-      screen: CharacterDetail
+      screen: CharacterDetail,
+      navigationOptions: () => {
+        return {
+          title: "Details",
+          headerStyle: {
+            backgroundColor: Colors.purple
+          },
+          headerTintColor: "#f1f1f1"
+        };
+      }
+    },
+    [Screens.Feed]: {
+      screen: FeedDemo,
+      navigationOptions: {
+        title: "FEED"
+      }
     }
   })
 );

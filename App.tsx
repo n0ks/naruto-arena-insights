@@ -7,13 +7,10 @@ import { theme } from "src";
 YellowBox.ignoreWarnings([
   "react-devtools agent got no connection",
   "is deprecated",
-  "Warning: Failed prop type"
+  "Warning: Failed prop type",
+  "VirtualizedLists"
 ]);
 
 export const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <RootStack />
-    </ThemeProvider>
-  );
+  return <RootStack />;
 };

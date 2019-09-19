@@ -1,4 +1,5 @@
 export const Screens = {
   Characters: "CharactersScreen",
-  CharactersDetails: "CharactersDetailsScreen"
+  CharactersDetails: "CharactersDetailsScreen",
+  Feed: "FeedScreen"
 };
