@@ -5,7 +5,7 @@ export default StyleSheet.create({
   avatar: {
     width: 75,
     height: 75,
-    borderRadius: 36
+    borderRadius: 36,
   },
   border: { borderWidth: 1, borderRadius: 40 }
 });
