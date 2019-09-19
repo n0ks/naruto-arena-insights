@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { chakraMap } from "src/screens/Characters/CharacterDetail";
+import { chakraMap } from "src/screens/Characters/Details/CharacterDetail";
 import { colors } from "react-native-elements";
 
 export const Chakra = ({ chakra }) => {
@@ -12,8 +12,9 @@ export const Chakra = ({ chakra }) => {
         backgroundColor: chakraMap[chakra],
         marginHorizontal: 4,
         borderWidth: 1,
-        borderColor: colors.grey1,
-        elevation: 8
+        borderColor: "#f1f1f1",
+        borderRadius: 2,
+        elevation: 1
       }}
     />
   );
