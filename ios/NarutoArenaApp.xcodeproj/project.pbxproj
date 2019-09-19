@@ -31,6 +31,8 @@
 		DC7D70FEE1F345908B0E8F19 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E6129881FA8446982AECD09 /* FontAwesome5_Brands.ttf */; };
 		E180EC1829721BF9B13DB106 /* libPods-NarutoArenaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A738EA7735A62FC4525C36 /* libPods-NarutoArenaApp.a */; };
 		E288C59841FC49DB99E459FE /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CB32F6A47BA4AF6B1BAC6C9 /* SFProDisplay-Regular.ttf */; };
+		479E187D3EE64FA1890DCE55 /* CovesBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */; };
+		3F17E37139954C28A5F940E0 /* CovesLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FD06D1E60048537D3DA0E3C1 /* Pods-NarutoArenaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NarutoArenaApp.debug.xcconfig"; path = "Target Support Files/Pods-NarutoArenaApp/Pods-NarutoArenaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FF817F8462954A05AFAF7D7C /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */ = {isa = PBXFileReference; name = "CovesBold.ttf"; path = "../assets/fonts/CovesBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */ = {isa = PBXFileReference; name = "CovesLight.ttf"; path = "../assets/fonts/CovesLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,8 @@
 				E9B9B15896D2444FBA449D83 /* GothamRounded-Medium.otf */,
 				5DC86356AB864BCBB47582C2 /* Coves-Bold.ttf */,
 				906BC0272CEF41799A4D27A4 /* Coves-Light.ttf */,
+				35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */,
+				7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 				51A126BD23317AC7007A9EF9 /* GoogleService-Info.plist in Resources */,
 				7FCD13145C514FDDAADFEA79 /* Coves-Bold.ttf in Resources */,
 				076A7DC774884B88ADC232CD /* Coves-Light.ttf in Resources */,
+				479E187D3EE64FA1890DCE55 /* CovesBold.ttf in Resources */,
+				3F17E37139954C28A5F940E0 /* CovesLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
