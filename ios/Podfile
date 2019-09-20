@@ -35,12 +35,15 @@ target 'NarutoArenaApp' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'Firebase/Analytics'
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
   # target 'NarutoArenaAppTests' do
   #   inherit! :search_paths
   #   # Pods for testing
   # end
-
+  # use_frameworks! 
+  
   use_native_modules!
 end
+# Remove React from projects 
