@@ -1,0 +1,50 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+
+update_fastlane
+
+default_platform(:android)
+
+
+  desc "Upload apk to App Center"
+  lane :upload do
+    UI.message(Dir.cwd)
+    
+  # appcenter_upload(
+  #   api_token: ENV["APP_CENTER_API_TOKEN"],
+  #   owner_name: "Rodrigo Martins",
+  #   app_name: "NarutoArena",
+  #   apk: "../app/build/outputs/apk/dev/release/app-dev-arm64-v8a-release.apk",
+  #   app_os: 'Android'
+  #   notify_testers: true # Set to false if you don't want to notify testers of your new release (default: `false`)
+  # )
+  
+  end
+
+
+  desc "Bundle release app"
+  lane :beta do
+
+    changelog_from_git_commits
+    begin
+      gradle(task: "clean assembleRelease")
+
+    rescue => ex
+
+      raise ex
+
+      UI.important("Deu merda no build mermão",ex.message)
+    end
+    # crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
