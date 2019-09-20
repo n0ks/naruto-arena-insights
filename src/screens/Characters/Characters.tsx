@@ -11,15 +11,21 @@ import {
   SafeAreaView,
   TouchableOpacity,
   View,
-  Animated
+  Animated,
 } from "react-native";
+import { WebView } from "react-native-webview";
 import { NavigationType, Screens, ICharacters } from "utils";
 import { SearchableBar } from "src/components";
 import Analytics from "appcenter-analytics";
+import Device from "react-native-device-info";
+// @ts-ignore
+import gif from "../../../assets/images/sharingan_loading.gif";
+import { Button } from "react-native-elements";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
   const [queryText, setQueryText] = useState("");
+  const [loading, setLoading] = useState(true);
   const [queryCharacters, setQueryCharacters] = useState(characters);
 
   const fuse = new Fuse(characters, {
@@ -44,6 +50,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
       if (charactersStored && charactersStored.length > 1) {
         setCharacters(JSON.parse(charactersStored));
         setQueryCharacters(JSON.parse(charactersStored));
+        setLoading(false);
         return;
       }
 
@@ -53,7 +60,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         .orderBy("character.name")
         .get()
         .then(data => {
-          console.log("fiirestore data", data);
           data.docs.forEach((doc, index) => {
             // @ts-ignore
             char.push({ ...doc!.data()!.character });
@@ -61,6 +67,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
 
           setCharacters(char);
           setQueryCharacters(char);
+          setLoading(false);
 
           AsyncStorage.setItem("characters", JSON.stringify(char));
         });
@@ -73,9 +80,15 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     return (
       <View style={{ zIndex: 1000 }}>
         <TouchableOpacity
-          onPress={() => {
-            console.log("onpress");
-            Analytics.trackEvent("go_to_char_details", { name: item.name });
+          onPress={async () => {
+            let deviceInfo = {
+              deviceName: await Device.getDeviceName(),
+              sysName: await Device.getSystemName()
+            };
+            Analytics.trackEvent("go_to_char_details", {
+              name: item.name,
+              ...deviceInfo
+            });
             navigation.navigate(Screens.CharactersDetails, { item });
           }}
           style={styles.border}
@@ -87,47 +100,77 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   };
 
   const SEARCH_HEIGHT = 60;
+
   const scrollY = new Animated.Value(0);
-  const searchY = scrollY.interpolate({
+
+  const diff = Animated.diffClamp(scrollY, 0, SEARCH_HEIGHT);
+
+  const searchY = diff.interpolate({
     inputRange: [0, SEARCH_HEIGHT],
     outputRange: [0, -SEARCH_HEIGHT],
     extrapolate: "clamp"
   });
 
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <Image
+          source={gif}
+          style={{
+            width: 150,
+            height: 150,
+            borderRadius: 75,
+            alignSelf: "center"
+          }}
+        />
+      </View>
+    );
+  }
+  // if (true) {
+  //   return (
+  //     <WebView
+  //       source={{ uri: "https://naruto-arena.net" }}
+  //       javaScriptEnabled={true}
+  //       style={{
+  //         flex: 1,
+  //         borderWidth: 1,
+  //         justifyContent: "center",
+  //         alignItems: "center"
+  //       }}
+  //       domStorageEnabled={true}
+  //     />
+  //   );
+  // }
+
   return (
-    <SafeAreaView>
-      <Animated.ScrollView
+    <SafeAreaView style={{ flex: 1 }}>
+      <SearchableBar
+        queryText={queryText}
+        updateQuery={updateQuery}
+        searchY={searchY}
+      />
+      {/* <Button
+          raised
+          onPress={() => navigation.toggleDrawer()}
+          title="drawer"
+        /> */}
+      <FlatList
+        data={queryCharacters}
+        keyboardDismissMode="interactive"
+        scrollEventThrottle={24}
         onScroll={Animated.event([
           {
             nativeEvent: { contentOffset: { y: scrollY } }
           }
         ])}
-        keyboardDismissMode="interactive"
-        keyboardShouldPersistTaps="always"
-      >
-        <SearchableBar
-          queryText={queryText}
-          updateQuery={updateQuery}
-          searchY={searchY}
-        />
-        <FlatList
-          data={queryCharacters}
-          scrollEventThrottle={24}
-          keyboardDismissMode="interactive"
-          contentContainerStyle={{
-            backgroundColor: "transparent",
-            zIndex: 1000
-          }}
-          ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
-          keyExtractor={() => chance().guid()}
-          columnWrapperStyle={styles.flatList}
-          numColumns={3}
-          // ItemSeparatorComponent={() => <Divider />}
-          renderItem={renderItem}
-          initialNumToRender={5}
-          ListFooterComponent={() => <View style={{ paddingVertical: 50 }} />}
-        />
-      </Animated.ScrollView>
+        ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
+        keyExtractor={() => chance().guid()}
+        columnWrapperStyle={styles.flatList}
+        numColumns={3}
+        renderItem={renderItem}
+        initialNumToRender={5}
+        ListFooterComponent={() => <View style={{ paddingVertical: 50 }} />}
+      />
     </SafeAreaView>
   );
 };

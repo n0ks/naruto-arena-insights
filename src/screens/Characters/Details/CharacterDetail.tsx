@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Tile } from "react-native-elements";
 import { View, SafeAreaView } from "react-native";
-import { NavigationType, Characters } from "utils";
+import { NavigationType, ICharacters } from "utils";
 import { ScrollView } from "react-native-gesture-handler";
 import { Chakra, DText } from "src/components";
 
@@ -16,7 +16,7 @@ export const chakraMap = {
 };
 
 export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
-  const character: Characters = navigation.getParam("item");
+  const character: ICharacters = navigation.getParam("item");
   return (
     <SafeAreaView>
       <ScrollView
@@ -39,6 +39,7 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
             <Tile
               key={i}
               imageSrc={{ uri: skill.skillImg }}
+              activeOpacity={1}
               imageContainerStyle={styles.tileImgContainer}
               containerStyle={styles.tileContainer}
               imageProps={{
