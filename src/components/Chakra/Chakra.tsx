@@ -13,7 +13,7 @@ export const Chakra = ({ chakra }) => {
         marginHorizontal: 4,
         borderWidth: 1,
         borderColor: "#f1f1f1",
-        borderRadius: 2,
+        borderRadius: 3,
         elevation: 1
       }}
     />

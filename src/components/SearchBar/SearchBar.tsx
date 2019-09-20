@@ -1,11 +1,8 @@
-import React, { useContext, useCallback, useEffect } from "react";
-import { SearchBar, Icon, colors } from "react-native-elements";
-import { Platform, StyleProp, ViewStyle, Keyboard } from "react-native";
+import React from "react";
+import { SearchBar, colors } from "react-native-elements";
+import { Platform } from "react-native";
 import { Animated } from "react-native";
-import { IconProps } from "react-native-vector-icons/Icon";
 
-const AnimatedSearchBar = Animated.createAnimatedComponent(SearchBar);
-const SEARCH_HEIGHT = 60;
 interface Props {
   updateQuery: (text: string) => void;
   queryText: string;
@@ -17,11 +14,22 @@ export const SearchableBar: React.SFC<Props> = ({
   queryText,
   searchY
 }) => {
+  let height = searchY.interpolate({
+    inputRange: [0, 60],
+    outputRange: [60, 120],
+    extrapolate: "extend"
+  });
+
   return (
     <Animated.View
       style={{
-        height: SEARCH_HEIGHT,
-        transform: [{ translateY: searchY }]
+        height,
+        transform: [{ translateY: searchY }],
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000
       }}
     >
       {
