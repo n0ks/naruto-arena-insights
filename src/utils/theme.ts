@@ -1,4 +1,4 @@
-import { FullTheme, colors, ThemeProvider } from "react-native-elements";
+import { FullTheme } from "react-native-elements";
 
 export const theme: Partial<FullTheme> = {
   Text: {

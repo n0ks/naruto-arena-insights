@@ -1,6 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
-import { Dimensions, ScrollView, Text, View } from "react-native";
-import * as cheerio from "cheerio";
+import React from "react";
+import {  Text, View } from "react-native";
 
 export const FeedDemo = () => {
   return (

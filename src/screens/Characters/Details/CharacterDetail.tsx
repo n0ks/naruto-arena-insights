@@ -70,8 +70,8 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
                 <DText style={styles.skillClasses}>{skill.classes}</DText>
                 <View style={styles.chakraView}>
                   <DText>{`CD: ${skill.cooldown}`}</DText>
-                  {skill.chakras.map((chakra, i) => (
-                    <Chakra chakra={chakra} key={i} />
+                  {skill.chakras.map((chakra, idx) => (
+                    <Chakra chakra={chakra} key={idx} />
                   ))}
                 </View>
               </View>

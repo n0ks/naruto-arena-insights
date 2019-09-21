@@ -1,8 +1,6 @@
 import React from "react";
 import { SearchBar, colors } from "react-native-elements";
-import { Platform } from "react-native";
-import { Animated } from "react-native";
-
+import { Platform, Animated } from "react-native";
 interface Props {
   updateQuery: (text: string) => void;
   queryText: string;

@@ -1,6 +1,7 @@
 import React from "react";
-import { Drawer } from "src/navigation";
 import { YellowBox } from "react-native";
+import { Drawer } from "./navigation";
+import { ThemeProvider } from "react-native-elements";
 
 YellowBox.ignoreWarnings([
   "react-devtools agent got no connection",
@@ -11,5 +12,9 @@ YellowBox.ignoreWarnings([
 ]);
 
 export const App = () => {
-  return <Drawer/>;
+  return (
+    <ThemeProvider>
+      <Drawer />
+    </ThemeProvider>
+  );
 };

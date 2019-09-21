@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState} from "react";
 import AsyncStorage from "@react-native-community/async-storage";
 import chance from "chance";
 import firestore from "@react-native-firebase/firestore";
@@ -11,16 +11,15 @@ import {
   SafeAreaView,
   TouchableOpacity,
   View,
-  Animated,
+  Animated
 } from "react-native";
-import { WebView } from "react-native-webview";
-import { NavigationType, Screens, ICharacters } from "utils";
 import { SearchableBar } from "src/components";
 import Analytics from "appcenter-analytics";
 import Device from "react-native-device-info";
 // @ts-ignore
 import gif from "../../../assets/images/sharingan_loading.gif";
 import { Button } from "react-native-elements";
+import { NavigationType, Screens, ICharacters } from "src";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
@@ -60,9 +59,9 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         .orderBy("character.name")
         .get()
         .then(data => {
-          data.docs.forEach((doc, index) => {
+          data.docs.forEach((doc) => {
             // @ts-ignore
-            char.push({ ...doc!.data()!.character });
+            char.push({ ...doc!.data()!.character, });
           });
 
           setCharacters(char);
@@ -76,21 +75,23 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     getCharacters();
   }, []);
 
+  const navigateToDetails = async item => {
+    let deviceInfo = {
+      deviceName: await Device.getDeviceName(),
+      sysName: await Device.getSystemName()
+    };
+    Analytics.trackEvent("go_to_char_details", {
+      name: item.name,
+      ...deviceInfo
+    });
+    navigation.navigate(Screens.CharactersDetails, { item });
+  };
+
   const renderItem = ({ item }: { item: ICharacters }) => {
     return (
       <View style={{ zIndex: 1000 }}>
         <TouchableOpacity
-          onPress={async () => {
-            let deviceInfo = {
-              deviceName: await Device.getDeviceName(),
-              sysName: await Device.getSystemName()
-            };
-            Analytics.trackEvent("go_to_char_details", {
-              name: item.name,
-              ...deviceInfo
-            });
-            navigation.navigate(Screens.CharactersDetails, { item });
-          }}
+          onPress={() => navigateToDetails(item)}
           style={styles.border}
         >
           <Image source={{ uri: item.img }} style={styles.avatar} />
@@ -142,6 +143,8 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   //   );
   // }
 
+  const Footer = () => <View style={{ paddingVertical: 50 }} />;
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <SearchableBar
@@ -149,11 +152,11 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         updateQuery={updateQuery}
         searchY={searchY}
       />
-      {/* <Button
+      <Button
           raised
           onPress={() => navigation.toggleDrawer()}
-          title="drawer"
-        /> */}
+          title="toggle fuckin drawer"
+        />
       <FlatList
         data={queryCharacters}
         keyboardDismissMode="interactive"
@@ -169,7 +172,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         numColumns={3}
         renderItem={renderItem}
         initialNumToRender={5}
-        ListFooterComponent={() => <View style={{ paddingVertical: 50 }} />}
+        ListFooterComponent={Footer}
       />
     </SafeAreaView>
   );

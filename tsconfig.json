@@ -3,7 +3,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "react",
     "lib": ["es6"],
     "moduleResolution": "node",
@@ -11,10 +11,16 @@
     "strict": false,
     "target": "esnext",
     "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "utils": ["./src/utils"],
-      "src": ["./src/"]
+      "components/*": ["./src/components/*"],
+      "utils/*": ["./src/utils/*"],
+      "screen/*": ["./src/screen/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "navigation/*": ["./src/navigation/*"]
     }
   },
   "exclude": [
