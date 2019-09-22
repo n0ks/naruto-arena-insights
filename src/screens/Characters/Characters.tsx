@@ -1,6 +1,5 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-community/async-storage";
-import chance from "chance";
 import firestore from "@react-native-firebase/firestore";
 import Fuse from "fuse.js";
 import Splash from "react-native-splash-screen";
@@ -13,13 +12,13 @@ import {
   View,
   Animated
 } from "react-native";
-import { SearchableBar } from "src/components";
+import { SearchableBar } from "../../components";
 import Analytics from "appcenter-analytics";
 import Device from "react-native-device-info";
 // @ts-ignore
 import gif from "../../../assets/images/sharingan_loading.gif";
+import { NavigationType, ICharacters, Screens } from "../../utils";
 import { Button } from "react-native-elements";
-import { NavigationType, Screens, ICharacters } from "src";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
@@ -59,9 +58,9 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         .orderBy("character.name")
         .get()
         .then(data => {
-          data.docs.forEach((doc) => {
+          data.docs.forEach(doc => {
             // @ts-ignore
-            char.push({ ...doc!.data()!.character, });
+            char.push({ ...doc!.data()!.character });
           });
 
           setCharacters(char);
@@ -152,11 +151,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         updateQuery={updateQuery}
         searchY={searchY}
       />
-      <Button
-          raised
-          onPress={() => navigation.toggleDrawer()}
-          title="toggle fuckin drawer"
-        />
       <FlatList
         data={queryCharacters}
         keyboardDismissMode="interactive"
@@ -167,11 +161,21 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
           }
         ])}
         ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
-        keyExtractor={() => chance().guid()}
+        keyExtractor={(item, i) => i.toString()}
+        contentContainerStyle={{ marginTop: SEARCH_HEIGHT }}
         columnWrapperStyle={styles.flatList}
         numColumns={3}
         renderItem={renderItem}
         initialNumToRender={5}
+        ListHeaderComponent={() => (
+          <Button
+            title="clan ladder test"
+            type="outline"
+            raised
+            containerStyle={{ width: 150, alignSelf: "center" }}
+            onPress={() => navigation.navigate(Screens.ClanLadder)}
+          />
+        )}
         ListFooterComponent={Footer}
       />
     </SafeAreaView>

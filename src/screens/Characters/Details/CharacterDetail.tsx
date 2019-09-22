@@ -1,19 +1,10 @@
 import React from "react";
 import { Avatar, Tile } from "react-native-elements";
 import { View, SafeAreaView } from "react-native";
-import { NavigationType, ICharacters } from "utils";
 import { ScrollView } from "react-native-gesture-handler";
-import { Chakra, DText } from "src/components";
-
+import { Chakra, DText } from "../../../components";
 import styles from "./CharacterDetails.styles";
-
-export const chakraMap = {
-  thai: "#4caf50",
-  blood: "#e53935",
-  nin: "#1e88e5",
-  gen: "#eeeeee",
-  rnd: "#424242"
-};
+import { NavigationType, ICharacters } from "../../../utils/Interfaces";
 
 export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
   const character: ICharacters = navigation.getParam("item");

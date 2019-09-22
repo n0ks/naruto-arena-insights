@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { chakraMap } from "src/screens/Characters/Details/CharacterDetail";
+import { chakraMap } from "../../utils";
 
 export const Chakra = ({ chakra }) => {
   return (

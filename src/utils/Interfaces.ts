@@ -23,3 +23,32 @@ export interface CharacterSkill {
   classes: string;
   skillImg: string;
 }
+
+export interface Clans {
+  clanName: string;
+  profile: string;
+  wins: string;
+  loses: string;
+  level: string;
+  exp: string;
+  streak: string;
+  rank: number;
+}
+export interface Streak {
+  name: string;
+  profile: string;
+  streak: string;
+}
+
+export interface Users {
+  username: string;
+  profile: string;
+  wins: string;
+  loses: string;
+  level: string;
+  rank: string;
+  exp: string;
+  streak: string;
+}
+
+export type ChakraName = "thai" | "nin" | "blood" | "gen" | "rnd";
