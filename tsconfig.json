@@ -15,13 +15,6 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "components/*": ["./src/components/*"],
-      "utils/*": ["./src/utils/*"],
-      "screen/*": ["./src/screen/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "navigation/*": ["./src/navigation/*"]
-    }
   },
   "exclude": [
     "node_modules",

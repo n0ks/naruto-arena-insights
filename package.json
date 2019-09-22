@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android --variant=devDebug",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator=\"IPhone 8\"",
     "start": "react-native start",
     "test": "jest",
-    "lint": "tslint --project ./tsconfig.json"
+    "lint": "tslint --project ./tsconfig.json",
+    "plop": "plop"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
@@ -21,7 +22,7 @@
     "events": "^3.0.0",
     "fuse.js": "^3.4.5",
     "react": "16.9.0",
-    "react-native": "0.61.0-rc.3",
+    "react-native": "0.61.0-rc.2",
     "react-native-device-info": "^3.1.4",
     "react-native-elements": "^1.2.0",
     "react-native-gesture-handler": "^1.4.1",
