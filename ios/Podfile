@@ -44,8 +44,6 @@ target 'NarutoArenaApp' do
   #   inherit! :search_paths
   #   # Pods for testing
   # end
-  # use_frameworks! 
   
   use_native_modules!
 end
-# Remove React from projects 
