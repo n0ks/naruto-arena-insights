@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Image } from "react-native";
 import { ListItem, colors, Card, Icon } from "react-native-elements";
 import { NavigationType, Clans } from "../../utils";
-import styles from "./ClanLadder.styles";
 import firestore from "@react-native-firebase/firestore";
+import { Loading } from "../../components/Loading";
 
 interface Props {}
 
@@ -51,9 +51,18 @@ export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
       </Card>
     );
   };
+
+  if (!clans) {
+    return <Loading />;
+  }
+
   return (
     <View>
-      <FlatList data={clans} renderItem={renderItem} />
+      <FlatList
+        data={clans}
+        renderItem={renderItem}
+        contentContainerStyle={{ backgroundColor: "#f5f5f5" }}
+      />
     </View>
   );
 };

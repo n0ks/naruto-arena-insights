@@ -12,13 +12,12 @@ import {
   View,
   Animated
 } from "react-native";
-import { SearchableBar } from "../../components";
+import { SearchableBar, Loading } from "../../components";
 import Analytics from "appcenter-analytics";
 import Device from "react-native-device-info";
 // @ts-ignore
 import gif from "../../../assets/images/sharingan_loading.gif";
 import { NavigationType, ICharacters, Screens } from "../../utils";
-import { Button } from "react-native-elements";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
@@ -112,35 +111,8 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   });
 
   if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <Image
-          source={gif}
-          style={{
-            width: 150,
-            height: 150,
-            borderRadius: 75,
-            alignSelf: "center"
-          }}
-        />
-      </View>
-    );
+    return <Loading />;
   }
-  // if (true) {
-  //   return (
-  //     <WebView
-  //       source={{ uri: "https://naruto-arena.net" }}
-  //       javaScriptEnabled={true}
-  //       style={{
-  //         flex: 1,
-  //         borderWidth: 1,
-  //         justifyContent: "center",
-  //         alignItems: "center"
-  //       }}
-  //       domStorageEnabled={true}
-  //     />
-  //   );
-  // }
 
   const Footer = () => <View style={{ paddingVertical: 50 }} />;
 
@@ -161,21 +133,12 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
           }
         ])}
         ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
-        keyExtractor={(item, i) => i.toString()}
+        keyExtractor={(_, i) => i.toString()}
         contentContainerStyle={{ marginTop: SEARCH_HEIGHT }}
         columnWrapperStyle={styles.flatList}
         numColumns={3}
         renderItem={renderItem}
         initialNumToRender={5}
-        ListHeaderComponent={() => (
-          <Button
-            title="clan ladder test"
-            type="outline"
-            raised
-            containerStyle={{ width: 150, alignSelf: "center" }}
-            onPress={() => navigation.navigate(Screens.ClanLadder)}
-          />
-        )}
         ListFooterComponent={Footer}
       />
     </SafeAreaView>
