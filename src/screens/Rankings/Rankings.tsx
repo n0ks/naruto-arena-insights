@@ -15,7 +15,7 @@ const LinearButton = (from, to, text, onPress) => (
       style={styles.linearBtn}
       pointerEvents="none"
     >
-      <Text style={{ color: "#f5f5f5", fontFamily: "CovesBold", fontSize: 32 }}>
+      <Text style={{ color: "#f5f5f5", fontFamily: "Coves-Bold", fontSize: 32 }}>
         {text}
       </Text>
     </LinearGradient>

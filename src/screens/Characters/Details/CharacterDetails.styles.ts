@@ -38,7 +38,7 @@ export default StyleSheet.create({
     textTransform: "uppercase",
     color: colors.grey1,
     fontSize: 6,
-    fontFamily: "CovesBold"
+    fontFamily: "Coves-Bold"
   },
   skillClasses: {
     color: colors.grey0,
@@ -56,7 +56,7 @@ export default StyleSheet.create({
   skillTitle: {
     color: colors.grey0,
     fontSize: 24,
-    fontFamily: "CovesBold",
+    fontFamily: "Coves-Bold",
     marginBottom: 16
   }
 });
