@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { Colors } from "utils";
 import { colors } from "react-native-elements";
+import { Colors } from "../../../utils";
 
 export default StyleSheet.create({
   charNameStyle: { fontSize: 28, color: Colors.purpleDark },
@@ -14,11 +14,19 @@ export default StyleSheet.create({
   tileImgContainer: {
     flex: 0,
     alignSelf: "center",
-    marginVertical: 16,
-    elevation: 4
+    marginVertical: 16
+  },
+  fastImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    justifyContent: "center",
+    alignSelf: "center",
+    borderWidth: 1,
+    marginVertical: 16
   },
   tileContainer: {
-    // marginBottom: 100,
+    marginBottom: 100,
     flex: 1,
     flexGrow: 1,
     flexDirection: "column",

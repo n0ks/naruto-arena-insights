@@ -1,13 +1,14 @@
 import React from "react";
 import { Avatar, Tile } from "react-native-elements";
-import { View, SafeAreaView } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { View, SafeAreaView,ScrollView } from "react-native";
 import { Chakra, DText } from "../../../components";
 import styles from "./CharacterDetails.styles";
 import { NavigationType, ICharacters } from "../../../utils/Interfaces";
+import FastImage from "react-native-fast-image";
 
 export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
   const character: ICharacters = navigation.getParam("item");
+
   return (
     <SafeAreaView>
       <ScrollView
@@ -31,21 +32,16 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
               key={i}
               imageSrc={{ uri: skill.skillImg }}
               activeOpacity={1}
+              ImageComponent={FastImage}
               imageContainerStyle={styles.tileImgContainer}
               containerStyle={styles.tileContainer}
               imageProps={{
                 width: 100,
                 height: 100,
                 borderRadius: 50,
-                containerStyle: {
-                  alignSelf: "center",
-                  elevation: 3,
-                  borderRadius: 50,
-                  marginTop: 24
-                },
-                placeholderStyle: { borderRadius: 50, elevation: 3 },
+                placeholderStyle: { borderRadius: 50 },
                 resizeMode: "contain",
-                style: { width: 100, height: 100 }
+                style: styles.fastImage
               }}
             >
               <View

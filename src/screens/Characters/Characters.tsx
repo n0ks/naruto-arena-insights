@@ -18,6 +18,7 @@ import Device from "react-native-device-info";
 // @ts-ignore
 import gif from "../../../assets/images/sharingan_loading.gif";
 import { NavigationType, ICharacters, Screens } from "../../utils";
+import FastImage from "react-native-fast-image";
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
@@ -63,6 +64,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
           });
 
           setCharacters(char);
+
           setQueryCharacters(char);
           setLoading(false);
 
@@ -92,7 +94,11 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
           onPress={() => navigateToDetails(item)}
           style={styles.border}
         >
-          <Image source={{ uri: item.img }} style={styles.avatar} />
+          <Image
+            source={{ uri: item.img }}
+            style={styles.avatar}
+            resizeMode={FastImage.resizeMode.contain}
+          />
         </TouchableOpacity>
       </View>
     );
@@ -115,15 +121,15 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   }
 
   const Footer = () => <View style={{ paddingVertical: 50 }} />;
-
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView>
       <SearchableBar
         queryText={queryText}
         updateQuery={updateQuery}
         searchY={searchY}
       />
       <FlatList
+        bounces={false}
         data={queryCharacters}
         keyboardDismissMode="interactive"
         scrollEventThrottle={24}
