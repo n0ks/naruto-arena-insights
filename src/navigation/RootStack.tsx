@@ -5,11 +5,11 @@ import {
 } from "react-navigation";
 import {
   CharacterDetail,
-  FeedDemo,
   Characters,
   ClanLadder,
   Rankings,
-  NinjaLadder
+  NinjaLadder,
+  TopLadder
 } from "../screens";
 
 import { Screens, Colors } from "../utils";
@@ -71,6 +71,13 @@ const LadderStack = createStackNavigator(
         title: "Clans"
       }
     },
+    [Screens.TopsLadder]: {
+      screen: TopLadder,
+
+      navigationOptions: {
+        title: "Top Ladder"
+      }
+    },
     [Screens.Rankings]: {
       screen: Rankings,
       navigationOptions: {
@@ -114,32 +121,32 @@ const TabNavigatior = createBottomTabNavigator(
         };
       }
     },
-    [Screens.Feed]: {
-      screen: FeedDemo,
-      navigationOptions: () => {
-        return {
-          title: "Feed",
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                backgroundColor: focused ? Colors.orange : colors.grey5,
-                borderRadius: 24
-              }}
-            >
-              <Image
-                source={TAB_ICONS[Screens.Feed]}
-                style={{
-                  width: 24,
-                  height: 24
-                }}
-                resizeMethod="resize"
-                resizeMode="contain"
-              />
-            </View>
-          )
-        };
-      }
-    },
+    // [Screens.Feed]: {
+    //   screen: FeedDemo,
+    //   navigationOptions: () => {
+    //     return {
+    //       title: "Feed",
+    //       tabBarIcon: ({ focused }) => (
+    //         <View
+    //           style={{
+    //             backgroundColor: focused ? Colors.orange : colors.grey5,
+    //             borderRadius: 24
+    //           }}
+    //         >
+    //           <Image
+    //             source={TAB_ICONS[Screens.Feed]}
+    //             style={{
+    //               width: 24,
+    //               height: 24
+    //             }}
+    //             resizeMethod="resize"
+    //             resizeMode="contain"
+    //           />
+    //         </View>
+    //       )
+    //     };
+    //   }
+    // },
     [Screens.Ladder]: {
       screen: LadderStack,
       navigationOptions: () => {

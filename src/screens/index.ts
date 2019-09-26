@@ -1,4 +1,5 @@
 // ---plop
+export * from './TopLadder';
 export * from './NinjaLadder';
 export * from './Rankings';
 export * from './ClanLadder';
