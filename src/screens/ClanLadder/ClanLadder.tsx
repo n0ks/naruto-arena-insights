@@ -56,7 +56,6 @@ export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
     return <Loading />;
   }
 
-  console.log(clans);
   return (
     <View>
       <FlatList

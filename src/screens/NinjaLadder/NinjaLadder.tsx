@@ -81,7 +81,6 @@ export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
     return <Loading />;
   }
 
-  console.log(ninjas);
   return (
     <View>
       <FlatList
