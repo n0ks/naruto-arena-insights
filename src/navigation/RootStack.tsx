@@ -3,7 +3,14 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from "react-navigation";
-import { CharacterDetail, FeedDemo, Characters, ClanLadder } from "../screens";
+import {
+  CharacterDetail,
+  FeedDemo,
+  Characters,
+  ClanLadder,
+  Rankings,
+  NinjaLadder
+} from "../screens";
 
 import { Screens, Colors } from "../utils";
 import { colors } from "react-native-elements";
@@ -14,6 +21,13 @@ const TAB_ICONS = {
   [Screens.Characters]: require("../../assets/images/seal_icon.png"),
   [Screens.Feed]: require("../../assets/images/konoha_icon.png"),
   [Screens.ClanLadder]: require("../../assets/images/shisui_sharingan.png")
+};
+
+const defaultNavOpts = {
+  headerStyle: {
+    backgroundColor: Colors.purple
+  },
+  headerTintColor: "#f1f1f1"
 };
 
 export const RootStack = createStackNavigator(
@@ -36,11 +50,38 @@ export const RootStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: Colors.purple
-      },
-      headerTintColor: "#f1f1f1"
+      ...defaultNavOpts
     }
+  }
+);
+
+const LadderStack = createStackNavigator(
+  {
+    [Screens.NinjaLadder]: {
+      screen: NinjaLadder,
+
+      navigationOptions: {
+        title: "Ninja Ladder"
+      }
+    },
+    [Screens.ClanLadder]: {
+      screen: ClanLadder,
+
+      navigationOptions: {
+        title: "Clans"
+      }
+    },
+    [Screens.Rankings]: {
+      screen: Rankings,
+      navigationOptions: {
+        // title: "Ladders",
+        header: null
+      }
+    }
+  },
+  {
+    initialRouteName: Screens.Rankings,
+    defaultNavigationOptions: defaultNavOpts
   }
 );
 
@@ -49,8 +90,7 @@ const TabNavigatior = createBottomTabNavigator(
     [Screens.Characters]: {
       screen: RootStack,
       title: "Characters",
-      navigationOptions: ({ navigation }) => {
-        console.log(navigation);
+      navigationOptions: () => {
         return {
           title: "Characters",
           tabBarIcon: ({ focused }) => (
@@ -76,9 +116,7 @@ const TabNavigatior = createBottomTabNavigator(
     },
     [Screens.Feed]: {
       screen: FeedDemo,
-      title: "Feed",
-      navigationOptions: ({ navigation }) => {
-        console.log(navigation);
+      navigationOptions: () => {
         return {
           title: "Feed",
           tabBarIcon: ({ focused }) => (
@@ -102,12 +140,12 @@ const TabNavigatior = createBottomTabNavigator(
         };
       }
     },
-    [Screens.ClanLadder]: {
-      screen: ClanLadder,
-      navigationOptions: navigation => {
-        console.log(navigation);
+    [Screens.Ladder]: {
+      screen: LadderStack,
+      navigationOptions: () => {
         return {
           title: "Ladders",
+
           tabBarIcon: ({ focused }) => (
             <View
               style={{

@@ -3,5 +3,7 @@ export const Screens = {
   CharactersDetails: "CharactersDetailsScreen",
   Feed: "FeedScreen",
   ClanLadder: "ClanLadderScreen",
+  NinjaLadder: "NinjaLadderScreen",
+  Ladder: "LadderScreen",
   Rankings: "RankingsScreen"
 };
