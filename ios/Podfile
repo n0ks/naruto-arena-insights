@@ -37,7 +37,8 @@ target 'NarutoArenaApp' do
   pod 'Firebase/Analytics'
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
-
+  
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 

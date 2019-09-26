@@ -14,12 +14,12 @@
 		378A00A8A71947A9B638662B /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BFFAF9B4F540E986954A3C /* FontAwesome5_Regular.ttf */; };
 		425AC73ABB8F40AE885246D1 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7760B9E4DE43446B98A8A2C4 /* MaterialCommunityIcons.ttf */; };
 		4C7884690FB047E8AC7508D0 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF817F8462954A05AFAF7D7C /* Feather.ttf */; };
+		513C585B233CE1070020B053 /* CovesBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 513C585A233CE1070020B053 /* CovesBold.ttf */; };
+		513C585D233CE10D0020B053 /* CovesLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 513C585C233CE10D0020B053 /* CovesLight.ttf */; };
 		5142DE76088B4E68A74F511D /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 773A188BDD7C4043983C4F0A /* Entypo.ttf */; };
 		515D94BCB35C4C8BB1FAE555 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0D92FA45D4F6988FDEFF3 /* Fontisto.ttf */; };
 		519B1EC0233C5870000EC70D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 519B1EBF233C5870000EC70D /* GoogleService-Info.plist */; };
 		519B1ED6233C5C0F000EC70D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519B1ED5233C5C0F000EC70D /* Images.xcassets */; };
-		519B1EE8233C63B4000EC70D /* CovesBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */; };
-		519B1EE9233C63B9000EC70D /* CovesLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */; };
 		519B1EEA233C63BE000EC70D /* SFProDisplayRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A25986A5B6304069BC44DDCB /* SFProDisplayRegular.ttf */; };
 		55D61F2CCB474C9CA93F27B7 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E3426D914084C2EA8274939 /* MaterialIcons.ttf */; };
 		62D776A7F6B1487EAE916864 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6806698FFE184642827B634B /* SimpleLineIcons.ttf */; };
@@ -165,8 +165,9 @@
 		2CD0D92FA45D4F6988FDEFF3 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		31DC1923C38641DEA531C971 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		3493F7E507C91D15935698C1 /* Pods-NarutoArenaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NarutoArenaApp.release.xcconfig"; path = "Target Support Files/Pods-NarutoArenaApp/Pods-NarutoArenaApp.release.xcconfig"; sourceTree = "<group>"; };
-		35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CovesBold.ttf; path = ../assets/fonts/CovesBold.ttf; sourceTree = "<group>"; };
 		4E6129881FA8446982AECD09 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		513C585A233CE1070020B053 /* CovesBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CovesBold.ttf; path = ../assets/fonts/CovesBold.ttf; sourceTree = "<group>"; };
+		513C585C233CE10D0020B053 /* CovesLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CovesLight.ttf; path = ../assets/fonts/CovesLight.ttf; sourceTree = "<group>"; };
 		5163B1EA23345B7800C67172 /* libreact-native-splash-screen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-splash-screen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		519B1EBF233C5870000EC70D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		519B1ED5233C5C0F000EC70D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -175,7 +176,6 @@
 		6806698FFE184642827B634B /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		773A188BDD7C4043983C4F0A /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		7760B9E4DE43446B98A8A2C4 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CovesLight.ttf; path = ../assets/fonts/CovesLight.ttf; sourceTree = "<group>"; };
 		94424FE661B24E418E2784B1 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		957E745ECC84A034A0DBBC8C /* Pods-NarutoArenaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NarutoArenaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NarutoArenaAppTests/Pods-NarutoArenaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		98A738EA7735A62FC4525C36 /* libPods-NarutoArenaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NarutoArenaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +317,8 @@
 		A59206587A6547C2BF836E85 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				513C585C233CE10D0020B053 /* CovesLight.ttf */,
+				513C585A233CE1070020B053 /* CovesBold.ttf */,
 				E9FD80F4643D4C1B9C76A589 /* AntDesign.ttf */,
 				773A188BDD7C4043983C4F0A /* Entypo.ttf */,
 				04C177BCE2324A908A81FCC7 /* EvilIcons.ttf */,
@@ -333,8 +335,6 @@
 				A2AE7F93B53B49D79E35C28C /* Octicons.ttf */,
 				6806698FFE184642827B634B /* SimpleLineIcons.ttf */,
 				54C33CD9E8DE452FB7014B93 /* Zocial.ttf */,
-				35046E7AFCE1421EB10FE1A2 /* CovesBold.ttf */,
-				7D9E9A8DEBDE471CBB676575 /* CovesLight.ttf */,
 				A25986A5B6304069BC44DDCB /* SFProDisplayRegular.ttf */,
 			);
 			name = Resources;
@@ -524,8 +524,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				519B1EEA233C63BE000EC70D /* SFProDisplayRegular.ttf in Resources */,
-				519B1EE9233C63B9000EC70D /* CovesLight.ttf in Resources */,
-				519B1EE8233C63B4000EC70D /* CovesBold.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				9EBCA23E865B4F9DB00E02DA /* AntDesign.ttf in Resources */,
 				5142DE76088B4E68A74F511D /* Entypo.ttf in Resources */,
@@ -537,11 +535,13 @@
 				880249760E0840FE9B4AA6D1 /* FontAwesome5_Solid.ttf in Resources */,
 				515D94BCB35C4C8BB1FAE555 /* Fontisto.ttf in Resources */,
 				C28DEDCDFA6D4711B0FA56C1 /* Foundation.ttf in Resources */,
+				513C585D233CE10D0020B053 /* CovesLight.ttf in Resources */,
 				D8669AE2FF944FC99B1FA34E /* Ionicons.ttf in Resources */,
 				425AC73ABB8F40AE885246D1 /* MaterialCommunityIcons.ttf in Resources */,
 				55D61F2CCB474C9CA93F27B7 /* MaterialIcons.ttf in Resources */,
 				519B1ED6233C5C0F000EC70D /* Images.xcassets in Resources */,
 				89986D522CBC4603B13D6F73 /* Octicons.ttf in Resources */,
+				513C585B233CE1070020B053 /* CovesBold.ttf in Resources */,
 				62D776A7F6B1487EAE916864 /* SimpleLineIcons.ttf in Resources */,
 				059A0E0D61FB4695B5A76516 /* Zocial.ttf in Resources */,
 				519B1EC0233C5870000EC70D /* GoogleService-Info.plist in Resources */,
