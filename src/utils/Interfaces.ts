@@ -15,6 +15,12 @@ export interface ICharacters {
   skills: CharacterSkill[];
 }
 
+export interface Streak {
+  name: string;
+  profile: string;
+  streak: string;
+}
+
 export interface CharacterSkill {
   skillName: string;
   skillDescription: string;

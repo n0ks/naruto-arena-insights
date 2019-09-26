@@ -5,5 +5,6 @@ export const Screens = {
   ClanLadder: "ClanLadderScreen",
   NinjaLadder: "NinjaLadderScreen",
   Ladder: "LadderScreen",
+  TopsLadder: "TopsLadderScreen",
   Rankings: "RankingsScreen"
 };
