@@ -10,7 +10,7 @@ target 'NarutoArenaApp' do
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/'
   pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
-  pod 'React-DevSupport', :path => '../node_modules/react-native/React'
+  # pod 'React-DevSupport', :path => '../node_modules/react-native/React'
   pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
   pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
   pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
@@ -20,7 +20,7 @@ target 'NarutoArenaApp' do
   pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
   pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
-  pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
+  # pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
 
   pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
@@ -38,6 +38,7 @@ target 'NarutoArenaApp' do
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
   # target 'NarutoArenaAppTests' do

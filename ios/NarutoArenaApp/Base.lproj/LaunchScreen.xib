@@ -12,19 +12,20 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" id="5ka-gJ-bkf">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="834"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" red="0.50980392156862742" green="0.25098039215686274" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
             <nil key="simulatedStatusBarMetrics"/>
             <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="348" y="423"/>
+            <point key="canvasLocation" x="347.82608695652175" y="422.54464285714283"/>
         </view>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" id="5rV-yf-0yD">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <point key="canvasLocation" x="346" y="433"/>
-        </imageView>
     </objects>
     <resources>
-        <image name="SplashScreen" width="736" height="414"/>
+        <image name="splash" width="375" height="812"/>
     </resources>
 </document>
