@@ -21,13 +21,12 @@ export const SearchableBar: React.SFC<Props> = ({
   return (
     <Animated.View
       style={{
-        height,
         transform: [{ translateY: searchY }],
         position: "absolute",
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 1000
+        zIndex: 1000,
       }}
     >
       {

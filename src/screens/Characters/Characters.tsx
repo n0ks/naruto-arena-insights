@@ -129,10 +129,11 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         searchY={searchY}
       />
       <FlatList
+        keyboardShouldPersistTaps="always"
         bounces={false}
         data={queryCharacters}
         keyboardDismissMode="interactive"
-        scrollEventThrottle={24}
+        scrollEventThrottle={16}
         onScroll={Animated.event([
           {
             nativeEvent: { contentOffset: { y: scrollY } }
