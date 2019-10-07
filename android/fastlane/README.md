@@ -15,6 +15,16 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
+### version_patch
+```
+fastlane version_patch
+```
+Bump patch
+### version_minor
+```
+fastlane version_minor
+```
+Bump minor
 ### upload
 ```
 fastlane upload

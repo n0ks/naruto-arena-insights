@@ -1,3 +1,4 @@
+apply from: 'https://gist.githubusercontent.com/pedrosobral/ec6dfe4017f84a35e2fc8f8290737754/raw/3a3bd33a20b6933e956942076e58c759b50d0cc8/app_version.gradle'
 apply plugin: "com.android.application"
 apply plugin: "io.fabric"
 
@@ -134,8 +135,8 @@ android {
         applicationId "com.narutoarenaapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 7
-        versionName "0.0.7"
+        versionCode appVersionCode.toInteger()
+        versionName appVersionName
         multiDexEnabled true
     }
     splits {

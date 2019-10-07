@@ -2,10 +2,21 @@ update_fastlane
 
 default_platform(:android)
 
+desc "Bump patch"
+  lane :version_patch do 
+    gradle(task: 'bumperVersionPatch')
+  end
+
+desc "Bump minor"
+  lane :version_minor do 
+    gradle(task: 'bumperVersionMinor')
+  end
 
   desc "Upload apk to App Center"
   lane :upload do
 
+  UI.message("\n\n\n=====================================\n uploading android\n=====================================")
+    
   appcenter_upload(
     api_token: ENV["APP_CENTER_API_TOKEN"],
     owner_name: "rodrigo.m",
@@ -13,11 +24,11 @@ default_platform(:android)
     app_name: "NarutoArena",
     apk: "app/build/outputs/apk/dev/release/app-dev-arm64-v8a-release.apk",
     app_os: 'Android',
-    notify_testers: true 
+    notify_testers: true,
+    release_notes: './release-notes.md' 
   )
 
   end
-
 
   desc "Bundle release app"
   lane :beta do
