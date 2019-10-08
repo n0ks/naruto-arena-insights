@@ -44,13 +44,13 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     Splash.hide();
 
     const getCharacters = async () => {
-      let charactersStored = await AsyncStorage.getItem("characters");
-      if (charactersStored && charactersStored.length > 1) {
-        setCharacters(JSON.parse(charactersStored));
-        setQueryCharacters(JSON.parse(charactersStored));
-        setLoading(false);
-        return;
-      }
+      // let charactersStored = await AsyncStorage.getItem("characters");
+      // if (charactersStored && charactersStored.length > 1) {
+      //   setCharacters(JSON.parse(charactersStored));
+      //   setQueryCharacters(JSON.parse(charactersStored));
+      //   setLoading(false);
+      //   return;
+      // }
 
       let char: any[] = [];
       firestore()
@@ -68,7 +68,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
           setQueryCharacters(char);
           setLoading(false);
 
-          AsyncStorage.setItem("characters", JSON.stringify(char));
+          // AsyncStorage.setItem("characters", JSON.stringify(char));
         });
     };
 
@@ -121,6 +121,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   }
 
   const Footer = () => <View style={{ paddingVertical: 50 }} />;
+
   return (
     <SafeAreaView>
       <SearchableBar
@@ -129,7 +130,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         searchY={searchY}
       />
       <FlatList
-        keyboardShouldPersistTaps="always"
         bounces={false}
         data={queryCharacters}
         keyboardDismissMode="interactive"

@@ -9,7 +9,8 @@ import {
   ClanLadder,
   Rankings,
   NinjaLadder,
-  TopLadder
+  TopLadder,
+  WebViewDemo
 } from "../screens";
 
 import { Screens, Colors } from "../utils";
@@ -121,32 +122,32 @@ const TabNavigatior = createBottomTabNavigator(
         };
       }
     },
-    // [Screens.Feed]: {
-    //   screen: FeedDemo,
-    //   navigationOptions: () => {
-    //     return {
-    //       title: "Feed",
-    //       tabBarIcon: ({ focused }) => (
-    //         <View
-    //           style={{
-    //             backgroundColor: focused ? Colors.orange : colors.grey5,
-    //             borderRadius: 24
-    //           }}
-    //         >
-    //           <Image
-    //             source={TAB_ICONS[Screens.Feed]}
-    //             style={{
-    //               width: 24,
-    //               height: 24
-    //             }}
-    //             resizeMethod="resize"
-    //             resizeMode="contain"
-    //           />
-    //         </View>
-    //       )
-    //     };
-    //   }
-    // },
+    [Screens.Web]: {
+      screen: WebViewDemo,
+      navigationOptions: () => {
+        return {
+          title: "Web",
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                backgroundColor: focused ? Colors.orange : colors.grey5,
+                borderRadius: 24
+              }}
+            >
+              <Image
+                source={TAB_ICONS[Screens.Feed]}
+                style={{
+                  width: 24,
+                  height: 24
+                }}
+                resizeMethod="resize"
+                resizeMode="contain"
+              />
+            </View>
+          )
+        };
+      }
+    },
     [Screens.Ladder]: {
       screen: LadderStack,
       navigationOptions: () => {
@@ -178,6 +179,8 @@ const TabNavigatior = createBottomTabNavigator(
   {
     swipeEnabled: true,
     initialRouteName: Screens.Characters,
+
+    tabBarPosition: "bottom",
     tabBarOptions: {
       // activeBackgroundColor: Colors.orange,
       activeTintColor: Colors.purple,

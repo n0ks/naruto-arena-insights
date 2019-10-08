@@ -3,5 +3,5 @@ export * from './TopLadder';
 export * from './NinjaLadder';
 export * from './Rankings';
 export * from './ClanLadder';
-export * from "./Feed";
+export * from "./WebView";
 export * from "./Characters";
