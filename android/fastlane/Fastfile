@@ -34,6 +34,7 @@ desc "Bump minor"
   lane :beta do
 
     # changelog_from_git_commits
+    version_patch 
     
     begin
 
