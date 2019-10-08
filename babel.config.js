@@ -6,14 +6,15 @@ module.exports = {
       {
         cwd: "babelrc",
         extensions: [".ts", ".tsx", ".js", ".ios.js", ".android.js"],
-        root: ["./src"],
-        // alias: {
-        //   utils: ["./src/utils/*"],
-        //   components: ["./src/components/*"],
-        //   screen: ["./src/screen/*"],
-        //   hooks: ["./src/hooks/*"],
-        //   navigation: ["./src/navigation/*"]
-        // }
+        // root: ["./src"],
+        alias: {
+          "@app": ["./src"]
+          // utils: ["./src/utils/*"],
+          // components: ["./src/components/*"],
+          // screen: ["./src/screen/*"],
+          // hooks: ["./src/hooks/*"],
+          // navigation: ["./src/navigation/*"]
+        }
       }
     ]
   ]
