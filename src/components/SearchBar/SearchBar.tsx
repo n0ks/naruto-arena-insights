@@ -12,11 +12,6 @@ export const SearchableBar: React.SFC<Props> = ({
   queryText,
   searchY
 }) => {
-  let height = searchY.interpolate({
-    inputRange: [0, 60],
-    outputRange: [60, 120],
-    extrapolate: "extend"
-  });
 
   return (
     <Animated.View
