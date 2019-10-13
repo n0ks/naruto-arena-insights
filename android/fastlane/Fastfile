@@ -16,7 +16,9 @@ desc "Bump minor"
   lane :upload do
 
   UI.message("\n\n\n=====================================\n uploading android\n=====================================")
-    
+  
+   notes = File.read('./release-notes.md') 
+
   appcenter_upload(
     api_token: ENV["APP_CENTER_API_TOKEN"],
     owner_name: "rodrigo.m",
@@ -25,7 +27,7 @@ desc "Bump minor"
     apk: "app/build/outputs/apk/dev/release/app-dev-arm64-v8a-release.apk",
     app_os: 'Android',
     notify_testers: true,
-    release_notes: './release-notes.md' 
+    release_notes: notes
   )
 
   end
