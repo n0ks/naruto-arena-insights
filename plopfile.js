@@ -64,6 +64,12 @@ module.exports = function(plop) {
         path: "src/screens/index.ts",
         pattern: /(---plop)/gi,
         template: "export * from './{{pascalCase name}}';"
+      },
+      {
+        type: "append",
+        path: "src/utils/Screens.ts",
+        pattern: /(---plop)/gi,
+        template: " {{pascalCase name}}: '{{pascalCase name}}Screen',"
       }
     ]
   });
