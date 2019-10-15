@@ -104,7 +104,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     );
   };
 
-  const SEARCH_HEIGHT = 60;
+  const SEARCH_HEIGHT = 60 + 24;
 
   const scrollY = new Animated.Value(0);
 
@@ -141,7 +141,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         ])}
         ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
         keyExtractor={(_, i) => i.toString()}
-        contentContainerStyle={{ marginTop: SEARCH_HEIGHT }}
+        contentContainerStyle={{ marginTop: SEARCH_HEIGHT, zIndex: -100 }}
         columnWrapperStyle={styles.flatList}
         numColumns={3}
         renderItem={renderItem}
