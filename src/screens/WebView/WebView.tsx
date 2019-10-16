@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
-import { colors } from "react-native-elements";
+import { colors,Icon } from "react-native-elements";
 import WebView from "react-native-webview";
 import { DText } from "@app/components";
-import { Icon } from "react-native-elements";
 import { Colors } from "@app/utils";
 const styles = StyleSheet.create({
   container: {
