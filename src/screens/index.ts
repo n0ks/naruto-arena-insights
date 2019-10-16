@@ -1,4 +1,6 @@
 // ---plop
+export * from './NewsFeed';
+export * from './News';
 export * from './TopLadder';
 export * from './NinjaLadder';
 export * from './Rankings';

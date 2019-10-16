@@ -10,7 +10,8 @@ import {
   Rankings,
   NinjaLadder,
   TopLadder,
-  WebViewDemo
+  NewsFeed,
+  News
 } from "../screens";
 
 import { Screens, Colors } from "../utils";
@@ -21,8 +22,27 @@ import React from "react";
 const TAB_ICONS = {
   [Screens.Characters]: require("../../assets/images/seal_icon.png"),
   [Screens.Feed]: require("../../assets/images/konoha_icon.png"),
-  [Screens.ClanLadder]: require("../../assets/images/shisui_sharingan.png")
+  [Screens.ClanLadder]: require("../../assets/images/shisui_sharingan.png"),
+  [Screens.News]: require("../../assets/images/konoha_icon.png")
 };
+const defaultTabIcon = (focused, screen) => (
+  <View
+    style={{
+      backgroundColor: focused ? Colors.orange : colors.grey5,
+      borderRadius: 24
+    }}
+  >
+    <Image
+      source={TAB_ICONS[screen]}
+      style={{
+        width: 24,
+        height: 24
+      }}
+      resizeMethod="resize"
+      resizeMode="contain"
+    />
+  </View>
+);
 
 const defaultNavOpts = {
   headerStyle: {
@@ -53,6 +73,27 @@ export const RootStack = createStackNavigator(
     defaultNavigationOptions: {
       ...defaultNavOpts
     }
+  }
+);
+
+const NewsStack = createStackNavigator(
+  {
+    [Screens.NewsFeed]: {
+      screen: NewsFeed,
+      navigationOptions: { title: "News Feed" }
+    },
+    [Screens.News]: {
+      screen: News,
+      navigationOptions: ({ navigation }) => {
+        return {
+          title: navigation.getParam("item").title
+        };
+      }
+    }
+  },
+  {
+    defaultNavigationOptions: defaultNavOpts,
+    initialRouteName: Screens.NewsFeed
   }
 );
 
@@ -93,7 +134,7 @@ const LadderStack = createStackNavigator(
   }
 );
 
-const TabNavigatior = createBottomTabNavigator(
+const TabNavigator = createBottomTabNavigator(
   {
     [Screens.Characters]: {
       screen: RootStack,
@@ -101,77 +142,38 @@ const TabNavigatior = createBottomTabNavigator(
       navigationOptions: () => {
         return {
           title: "Characters",
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                backgroundColor: focused ? Colors.orange : colors.grey5,
-                borderRadius: 24
-              }}
-            >
-              <Image
-                source={TAB_ICONS[Screens.Characters]}
-                style={{
-                  width: 24,
-                  height: 24
-                }}
-                resizeMethod="resize"
-                resizeMode="contain"
-              />
-            </View>
-          )
+          tabBarIcon: ({ focused }) =>
+            defaultTabIcon(focused, Screens.Characters)
         };
       }
     },
-    [Screens.Web]: {
-      screen: WebViewDemo,
-      navigationOptions: () => {
-        return {
-          title: "Web",
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                backgroundColor: focused ? Colors.orange : colors.grey5,
-                borderRadius: 24
-              }}
-            >
-              <Image
-                source={TAB_ICONS[Screens.Feed]}
-                style={{
-                  width: 24,
-                  height: 24
-                }}
-                resizeMethod="resize"
-                resizeMode="contain"
-              />
-            </View>
-          )
-        };
-      }
-    },
+    // [Screens.Web]: {
+    //   screen: WebViewDemo,
+
+    //   navigationOptions: () => {
+    //     return {
+    //       title: "Web",
+
+    //       tabBarIcon: ({ focused }) => defaultTabIcon(focused, Screens.Feed)
+    //     };
+    //   }
+    // },
     [Screens.Ladder]: {
       screen: LadderStack,
       navigationOptions: () => {
         return {
           title: "Ladders",
-
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                backgroundColor: focused ? Colors.orange : colors.grey5,
-                borderRadius: 24
-              }}
-            >
-              <Image
-                source={TAB_ICONS[Screens.ClanLadder]}
-                style={{
-                  width: 24,
-                  height: 24
-                }}
-                resizeMethod="resize"
-                resizeMode="contain"
-              />
-            </View>
-          )
+          tabBarIcon: ({ focused }) =>
+            defaultTabIcon(focused, Screens.ClanLadder)
+        };
+      }
+    },
+    [Screens.NewsFeed]: {
+      screen: NewsStack,
+      navigationOptions: () => {
+        return {
+          title: "News",
+          tabBarIcon: ({ focused }) => defaultTabIcon(focused, Screens.News)
         };
       }
     }
@@ -182,7 +184,6 @@ const TabNavigatior = createBottomTabNavigator(
 
     tabBarPosition: "bottom",
     tabBarOptions: {
-      // activeBackgroundColor: Colors.orange,
       activeTintColor: Colors.purple,
       inactiveTintColor: colors.grey3,
 
@@ -193,4 +194,4 @@ const TabNavigatior = createBottomTabNavigator(
   }
 );
 
-export const TabNav = createAppContainer(TabNavigatior);
+export const TabNav = createAppContainer(TabNavigator);
