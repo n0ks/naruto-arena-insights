@@ -33,7 +33,7 @@ desc "Bump minor"
   end
 
   desc "Bundle release app"
-  lane :beta do
+  lane :deploy do
 
     # changelog_from_git_commits
     version_patch 
