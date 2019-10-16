@@ -1,19 +1,21 @@
-import React from "react";
-import { Avatar, Tile } from "react-native-elements";
-import { View, SafeAreaView,ScrollView } from "react-native";
-import { Chakra, DText } from "../../../components";
-import styles from "./CharacterDetails.styles";
-import { NavigationType, ICharacters } from "../../../utils/Interfaces";
-import FastImage from "react-native-fast-image";
+/** @format */
+
+import React from 'react';
+import { Avatar, Tile } from 'react-native-elements';
+import { View, SafeAreaView, ScrollView } from 'react-native';
+import { Chakra, DText } from '../../../components';
+import styles from './CharacterDetails.styles';
+import { NavigationType, ICharacters } from '../../../utils/Interfaces';
+import FastImage from 'react-native-fast-image';
 
 export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
-  const character: ICharacters = navigation.getParam("item");
+  const character: ICharacters = navigation.getParam('item');
 
   return (
     <SafeAreaView>
       <ScrollView
         contentContainerStyle={{
-          alignItems: "center"
+          alignItems: 'center',
         }}
       >
         <Avatar
@@ -40,13 +42,13 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
                 height: 100,
                 borderRadius: 50,
                 placeholderStyle: { borderRadius: 50 },
-                resizeMode: "contain",
-                style: styles.fastImage
+                resizeMode: 'contain',
+                style: styles.fastImage,
               }}
             >
               <View
                 style={{
-                  flexGrow: 1
+                  flexGrow: 1,
                 }}
               >
                 <DText style={styles.skillTitle}>{skill.skillName}</DText>

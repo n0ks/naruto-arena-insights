@@ -1,8 +1,10 @@
+/** @format */
+
 import {
   createAppContainer,
   createStackNavigator,
-  createBottomTabNavigator
-} from "react-navigation";
+  createBottomTabNavigator,
+} from 'react-navigation';
 import {
   CharacterDetail,
   Characters,
@@ -11,32 +13,32 @@ import {
   NinjaLadder,
   TopLadder,
   NewsFeed,
-  News
-} from "../screens";
+  News,
+} from '../screens';
 
-import { Screens, Colors } from "../utils";
-import { colors } from "react-native-elements";
-import { Image, View } from "react-native";
-import React from "react";
+import { Screens, Colors } from '../utils';
+import { colors } from 'react-native-elements';
+import { Image, View } from 'react-native';
+import React from 'react';
 
 const TAB_ICONS = {
-  [Screens.Characters]: require("../../assets/images/seal_icon.png"),
-  [Screens.Feed]: require("../../assets/images/konoha_icon.png"),
-  [Screens.ClanLadder]: require("../../assets/images/shisui_sharingan.png"),
-  [Screens.News]: require("../../assets/images/konoha_icon.png")
+  [Screens.Characters]: require('../../assets/images/seal_icon.png'),
+  [Screens.Feed]: require('../../assets/images/konoha_icon.png'),
+  [Screens.ClanLadder]: require('../../assets/images/shisui_sharingan.png'),
+  [Screens.News]: require('../../assets/images/konoha_icon.png'),
 };
 const defaultTabIcon = (focused, screen) => (
   <View
     style={{
       backgroundColor: focused ? Colors.orange : colors.grey5,
-      borderRadius: 24
+      borderRadius: 24,
     }}
   >
     <Image
       source={TAB_ICONS[screen]}
       style={{
         width: 24,
-        height: 24
+        height: 24,
       }}
       resizeMethod="resize"
       resizeMode="contain"
@@ -46,9 +48,9 @@ const defaultTabIcon = (focused, screen) => (
 
 const defaultNavOpts = {
   headerStyle: {
-    backgroundColor: Colors.purple
+    backgroundColor: Colors.purple,
   },
-  headerTintColor: "#f1f1f1"
+  headerTintColor: '#f1f1f1',
 };
 
 export const RootStack = createStackNavigator(
@@ -57,22 +59,22 @@ export const RootStack = createStackNavigator(
       screen: Characters,
       navigationOptions: () => {
         return {
-          header: null
+          header: null,
         };
-      }
+      },
     },
     [Screens.CharactersDetails]: {
       screen: CharacterDetail,
 
       navigationOptions: {
-        title: "Details"
-      }
-    }
+        title: 'Details',
+      },
+    },
   },
   {
     defaultNavigationOptions: {
-      ...defaultNavOpts
-    }
+      ...defaultNavOpts,
+    },
   }
 );
 
@@ -80,20 +82,20 @@ const NewsStack = createStackNavigator(
   {
     [Screens.NewsFeed]: {
       screen: NewsFeed,
-      navigationOptions: { title: "News Feed" }
+      navigationOptions: { title: 'News Feed' },
     },
     [Screens.News]: {
       screen: News,
       navigationOptions: ({ navigation }) => {
         return {
-          title: navigation.getParam("item").title
+          title: navigation.getParam('item').title,
         };
-      }
-    }
+      },
+    },
   },
   {
     defaultNavigationOptions: defaultNavOpts,
-    initialRouteName: Screens.NewsFeed
+    initialRouteName: Screens.NewsFeed,
   }
 );
 
@@ -103,34 +105,34 @@ const LadderStack = createStackNavigator(
       screen: NinjaLadder,
 
       navigationOptions: {
-        title: "Ninja Ladder"
-      }
+        title: 'Ninja Ladder',
+      },
     },
     [Screens.ClanLadder]: {
       screen: ClanLadder,
 
       navigationOptions: {
-        title: "Clans"
-      }
+        title: 'Clans',
+      },
     },
     [Screens.TopsLadder]: {
       screen: TopLadder,
 
       navigationOptions: {
-        title: "Top Ladder"
-      }
+        title: 'Top Ladder',
+      },
     },
     [Screens.Rankings]: {
       screen: Rankings,
       navigationOptions: {
         // title: "Ladders",
-        header: null
-      }
-    }
+        header: null,
+      },
+    },
   },
   {
     initialRouteName: Screens.Rankings,
-    defaultNavigationOptions: defaultNavOpts
+    defaultNavigationOptions: defaultNavOpts,
   }
 );
 
@@ -138,14 +140,14 @@ const TabNavigator = createBottomTabNavigator(
   {
     [Screens.Characters]: {
       screen: RootStack,
-      title: "Characters",
+      title: 'Characters',
       navigationOptions: () => {
         return {
-          title: "Characters",
+          title: 'Characters',
           tabBarIcon: ({ focused }) =>
-            defaultTabIcon(focused, Screens.Characters)
+            defaultTabIcon(focused, Screens.Characters),
         };
-      }
+      },
     },
     // [Screens.Web]: {
     //   screen: WebViewDemo,
@@ -162,35 +164,35 @@ const TabNavigator = createBottomTabNavigator(
       screen: LadderStack,
       navigationOptions: () => {
         return {
-          title: "Ladders",
+          title: 'Ladders',
           tabBarIcon: ({ focused }) =>
-            defaultTabIcon(focused, Screens.ClanLadder)
+            defaultTabIcon(focused, Screens.ClanLadder),
         };
-      }
+      },
     },
     [Screens.NewsFeed]: {
       screen: NewsStack,
       navigationOptions: () => {
         return {
-          title: "News",
-          tabBarIcon: ({ focused }) => defaultTabIcon(focused, Screens.News)
+          title: 'News',
+          tabBarIcon: ({ focused }) => defaultTabIcon(focused, Screens.News),
         };
-      }
-    }
+      },
+    },
   },
   {
     swipeEnabled: true,
     initialRouteName: Screens.Characters,
 
-    tabBarPosition: "bottom",
+    tabBarPosition: 'bottom',
     tabBarOptions: {
       activeTintColor: Colors.purple,
       inactiveTintColor: colors.grey3,
 
       indicatorStyle: {
-        borderTopColor: Colors.purpleDark
-      }
-    }
+        borderTopColor: Colors.purpleDark,
+      },
+    },
   }
 );
 

@@ -1,21 +1,23 @@
-import React, { useEffect, useRef } from "react";
-import { View, StyleSheet, ActivityIndicator } from "react-native";
-import { colors,Icon } from "react-native-elements";
-import WebView from "react-native-webview";
-import { DText } from "@app/components";
-import { Colors } from "@app/utils";
+/** @format */
+
+import React, { useEffect, useRef } from 'react';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { colors, Icon } from 'react-native-elements';
+import WebView from 'react-native-webview';
+import { DText } from '@app/components';
+import { Colors } from '@app/utils';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-around",
-    backgroundColor: "#f5f5f5"
+    justifyContent: 'space-around',
+    backgroundColor: '#f5f5f5',
   },
   center: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.white
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+  },
 });
 
 export const WebViewDemo = () => {
@@ -35,7 +37,7 @@ export const WebViewDemo = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log("webref", webref);
+      console.log('webref', webref);
       // @ts-ignore
       webref.current.injectJavaScript(run);
     }, 1000);
@@ -45,12 +47,12 @@ export const WebViewDemo = () => {
     <View style={styles.container}>
       <WebView
         ref={webref}
-        source={{ uri: "https://naruto-arena.net" }}
+        source={{ uri: 'https://naruto-arena.net' }}
         javaScriptEnabled={true}
         domStorageEnabled={true}
         allowFileAccess
         allowsInlineMediaPlayback={false}
-        originWhitelist={["https://*"]}
+        originWhitelist={['https://*']}
         textZoom={110}
         style={{ borderWidth: 5 }}
         startInLoadingState
@@ -62,7 +64,7 @@ export const WebViewDemo = () => {
               size={48}
               type="material-community"
             />
-            <DText style={{ fontFamily: "Coves-Light" }}>
+            <DText style={{ fontFamily: 'Coves-Light' }}>
               {`Ooops... an error has occurred\n${errName}`}
             </DText>
           </View>
@@ -74,7 +76,7 @@ export const WebViewDemo = () => {
           const { nativeEvent } = syntheticEvent;
 
           console.warn(
-            "WebView received error status code: ",
+            'WebView received error status code: ',
             nativeEvent.statusCode
           );
         }}

@@ -1,1 +1,3 @@
-export * from './Chakra'
+/** @format */
+
+export * from './Chakra';

@@ -1,7 +1,9 @@
-import React from "react";
-import { View } from "react-native";
-import { chakraMap } from "../../utils";
-import { Icon } from "react-native-elements";
+/** @format */
+
+import React from 'react';
+import { View } from 'react-native';
+import { chakraMap } from '../../utils';
+import { Icon } from 'react-native-elements';
 
 export const Chakra = ({ chakra }) => {
   return (

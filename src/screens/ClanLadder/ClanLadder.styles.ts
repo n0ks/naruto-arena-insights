@@ -1,3 +1,5 @@
+/** @format */
+
 import { StyleSheet, ViewStyle } from 'react-native';
 
 interface Styles {

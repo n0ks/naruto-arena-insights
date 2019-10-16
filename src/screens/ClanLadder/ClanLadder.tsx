@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { View, FlatList, Image } from "react-native";
-import { ListItem, colors, Card, Icon } from "react-native-elements";
-import { NavigationType, Clans } from "../../utils";
-import firestore from "@react-native-firebase/firestore";
-import { Loading } from "../../components/Loading";
+/** @format */
+
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, Image } from 'react-native';
+import { ListItem, colors, Card, Icon } from 'react-native-elements';
+import { NavigationType, Clans } from '../../utils';
+import firestore from '@react-native-firebase/firestore';
+import { Loading } from '../../components/Loading';
 
 interface Props {}
 
@@ -14,14 +16,14 @@ export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
     let clanList = [];
     const getClans = async () => {
       let clanRef = await firestore()
-        .collection("clans")
-        .orderBy("clan.rank", "asc")
+        .collection('clans')
+        .orderBy('clan.rank', 'asc')
         .get();
 
       clanRef.docs.forEach(doc => {
         clanList.push({
           ...doc.data().clan,
-          id: doc.id
+          id: doc.id,
         });
       });
 
@@ -61,7 +63,7 @@ export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
       <FlatList
         data={clans}
         renderItem={renderItem}
-        contentContainerStyle={{ backgroundColor: "#f5f5f5" }}
+        contentContainerStyle={{ backgroundColor: '#f5f5f5' }}
       />
     </View>
   );

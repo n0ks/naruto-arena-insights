@@ -1,5 +1,7 @@
-import { StyleSheet, ViewStyle, ImageStyle, TextStyle } from "react-native";
-import { colors } from "react-native-elements";
+/** @format */
+
+import { StyleSheet, ViewStyle, ImageStyle, TextStyle } from 'react-native';
+import { colors } from 'react-native-elements';
 
 interface Styles {
   container: ViewStyle;
@@ -13,35 +15,35 @@ interface Styles {
 
 export default StyleSheet.create<Styles>({
   container: {
-    flex: 1
+    flex: 1,
   },
   linear: {
     height: 220,
     width: 380,
     elevation: 8,
     borderRadius: 5,
-    borderColor: "transparent",
+    borderColor: 'transparent',
     marginVertical: 16,
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   imgBg: {
     width: 200,
     height: 300,
     top: -170,
-    right: -200
+    right: -200,
   },
   imgBgImgStyle: {
-    resizeMode: "cover",
-    borderRadius: 70
+    resizeMode: 'cover',
+    borderRadius: 70,
   },
   sub: {
     color: colors.grey5,
-    fontFamily: "Coves-Light",
-    fontSize: 18
+    fontFamily: 'Coves-Light',
+    fontSize: 18,
   },
   listItemContainer: {
-    backgroundColor: "transparent",
-    paddingVertical: 8
+    backgroundColor: 'transparent',
+    paddingVertical: 8,
   },
-  title: { color: "#f5f5f5", fontFamily: "Coves-Bold" }
+  title: { color: '#f5f5f5', fontFamily: 'Coves-Bold' },
 });

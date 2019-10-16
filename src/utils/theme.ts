@@ -1,11 +1,13 @@
-import { FullTheme, colors } from "react-native-elements";
+/** @format */
+
+import { FullTheme, colors } from 'react-native-elements';
 
 export const theme: Partial<FullTheme> = {
   ListItem: {
     titleStyle: {
-      fontFamily: "Coves-Bold",
+      fontFamily: 'Coves-Bold',
       fontSize: 16,
-      color: colors.grey2
-    }
-  }
+      color: colors.grey2,
+    },
+  },
 };

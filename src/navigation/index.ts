@@ -1,1 +1,3 @@
-export * from "./RootStack";
+/** @format */
+
+export * from './RootStack';

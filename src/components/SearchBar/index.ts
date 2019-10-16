@@ -1,1 +1,3 @@
-export * from "./SearchBar";
+/** @format */
+
+export * from './SearchBar';

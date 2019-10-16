@@ -1,1 +1,3 @@
-export * from './Text'
+/** @format */
+
+export * from './Text';

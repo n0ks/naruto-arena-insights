@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { View, FlatList } from "react-native";
-import { Streak } from "../../utils";
-import { ListItem, colors } from "react-native-elements";
-import firestore from "@react-native-firebase/firestore";
-import { NavigationScreenProp, NavigationState } from "react-navigation";
-import { Loading } from "../../components";
+/** @format */
+
+import React, { useEffect, useState } from 'react';
+import { View, FlatList } from 'react-native';
+import { Streak } from '../../utils';
+import { ListItem, colors } from 'react-native-elements';
+import firestore from '@react-native-firebase/firestore';
+import { NavigationScreenProp, NavigationState } from 'react-navigation';
+import { Loading } from '../../components';
 
 interface NavigationParams {
-  ladderType: "streakladder" | "winladder";
+  ladderType: 'streakladder' | 'winladder';
 }
 
 type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
@@ -21,20 +23,20 @@ let a: Navigation;
 export const TopLadder: React.SFC<Props> = ({ navigation }) => {
   const [ladder, setLadder] = useState();
 
-  const ladderType = navigation.getParam("ladderType");
-  const STREAK_TYPE = ladderType == "winladder" ? "Wins" : "Streak";
+  const ladderType = navigation.getParam('ladderType');
+  const STREAK_TYPE = ladderType == 'winladder' ? 'Wins' : 'Streak';
   useEffect(() => {
     let ladderList = [];
     const getLadder = async () => {
       let ladderRef = await firestore()
         .collection(ladderType)
-        .orderBy("user.streak", "desc")
+        .orderBy('user.streak', 'desc')
         .get();
 
       ladderRef.docs.forEach(doc => {
         ladderList.push({
           ...doc.data().user,
-          id: doc.id
+          id: doc.id,
         });
       });
 

@@ -1,2 +1,4 @@
-export * from "./Characters";
-export * from './Details'
+/** @format */
+
+export * from './Characters';
+export * from './Details';

@@ -1,8 +1,10 @@
+/** @format */
+
 import {
   NavigationScreenProp,
   NavigationState,
-  NavigationParams
-} from "react-navigation";
+  NavigationParams,
+} from 'react-navigation';
 
 export interface NavigationType {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -57,4 +59,4 @@ export interface Users {
   streak: string;
 }
 
-export type ChakraName = "thai" | "nin" | "blood" | "gen" | "rnd";
+export type ChakraName = 'thai' | 'nin' | 'blood' | 'gen' | 'rnd';

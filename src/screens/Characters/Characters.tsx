@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from "react";
-import AsyncStorage from "@react-native-community/async-storage";
-import firestore from "@react-native-firebase/firestore";
-import Fuse from "fuse.js";
-import Splash from "react-native-splash-screen";
-import styles from "./Characters.styles";
+/** @format */
+
+import React, { useEffect, useState } from 'react';
+import firestore from '@react-native-firebase/firestore';
+import Fuse from 'fuse.js';
+import Splash from 'react-native-splash-screen';
+import styles from './Characters.styles';
 import {
   FlatList,
   Image,
   SafeAreaView,
   TouchableOpacity,
   View,
-  Animated
-} from "react-native";
-import { SearchableBar, Loading } from "../../components";
-import Analytics from "appcenter-analytics";
-import Device from "react-native-device-info";
+  Animated,
+} from 'react-native';
+import { SearchableBar, Loading } from '../../components';
+import Analytics from 'appcenter-analytics';
+import Device from 'react-native-device-info';
 // @ts-ignore
-import gif from "../../../assets/images/sharingan_loading.gif";
-import { NavigationType, ICharacters, Screens } from "../../utils";
-import FastImage from "react-native-fast-image";
+import gif from '../../../assets/images/sharingan_loading.gif';
+import { NavigationType, ICharacters, Screens } from '../../utils';
+import FastImage from 'react-native-fast-image';
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const [characters, setCharacters] = useState([]);
-  const [queryText, setQueryText] = useState("");
+  const [queryText, setQueryText] = useState('');
   const [loading, setLoading] = useState(true);
   const [queryCharacters, setQueryCharacters] = useState(characters);
 
@@ -32,7 +33,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     maxPatternLength: 20,
     location: 0,
     distance: 200,
-    keys: ["name"]
+    keys: ['name'],
   });
 
   const updateQuery = text => {
@@ -54,8 +55,8 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
 
       let char: any[] = [];
       firestore()
-        .collection("characters")
-        .orderBy("character.name")
+        .collection('characters')
+        .orderBy('character.name')
         .get()
         .then(data => {
           data.docs.forEach(doc => {
@@ -78,11 +79,11 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const navigateToDetails = async item => {
     let deviceInfo = {
       deviceName: await Device.getDeviceName(),
-      sysName: await Device.getSystemName()
+      sysName: await Device.getSystemName(),
     };
-    Analytics.trackEvent("go_to_char_details", {
+    Analytics.trackEvent('go_to_char_details', {
       name: item.name,
-      ...deviceInfo
+      ...deviceInfo,
     });
     navigation.navigate(Screens.CharactersDetails, { item });
   };
@@ -113,7 +114,7 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
   const searchY = diff.interpolate({
     inputRange: [0, SEARCH_HEIGHT],
     outputRange: [0, -SEARCH_HEIGHT],
-    extrapolate: "clamp"
+    extrapolate: 'clamp',
   });
 
   if (loading) {
@@ -136,12 +137,15 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         scrollEventThrottle={16}
         onScroll={Animated.event([
           {
-            nativeEvent: { contentOffset: { y: scrollY } }
-          }
+            nativeEvent: { contentOffset: { y: scrollY } },
+          },
         ])}
-        ListHeaderComponentStyle={{ backgroundColor: "transparent" }}
+        ListHeaderComponentStyle={{ backgroundColor: 'transparent' }}
         keyExtractor={(_, i) => i.toString()}
-        contentContainerStyle={{ marginTop: SEARCH_HEIGHT, zIndex: -100 }}
+        contentContainerStyle={{
+          marginTop: SEARCH_HEIGHT,
+          zIndex: -100,
+        }}
         columnWrapperStyle={styles.flatList}
         numColumns={3}
         renderItem={renderItem}

@@ -1,5 +1,7 @@
-export * from "./Colors";
-export * from "./Screens";
-export * from "./Interfaces";
-export * from "./theme";
-export * from "./maps";
+/** @format */
+
+export * from './Colors';
+export * from './Screens';
+export * from './Interfaces';
+export * from './theme';
+export * from './maps';

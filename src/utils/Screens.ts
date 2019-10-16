@@ -1,14 +1,16 @@
+/** @format */
+
 export const Screens = {
   // ---plop
- NewsFeed: 'NewsFeedScreen',
+  NewsFeed: 'NewsFeedScreen',
   News: 'NewsScreen',
-  Characters: "CharactersScreen",
-  CharactersDetails: "CharactersDetailsScreen",
-  Feed: "FeedScreen",
+  Characters: 'CharactersScreen',
+  CharactersDetails: 'CharactersDetailsScreen',
+  Feed: 'FeedScreen',
   Web: 'WebScreen',
-  ClanLadder: "ClanLadderScreen",
-  NinjaLadder: "NinjaLadderScreen",
-  Ladder: "LadderScreen",
-  TopsLadder: "TopsLadderScreen",
-  Rankings: "RankingsScreen"
+  ClanLadder: 'ClanLadderScreen',
+  NinjaLadder: 'NinjaLadderScreen',
+  Ladder: 'LadderScreen',
+  TopsLadder: 'TopsLadderScreen',
+  Rankings: 'RankingsScreen',
 };

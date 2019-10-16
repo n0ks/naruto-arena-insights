@@ -1,1 +1,3 @@
-export * from './CharacterDetail'
+/** @format */
+
+export * from './CharacterDetail';

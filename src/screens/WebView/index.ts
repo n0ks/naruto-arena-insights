@@ -1,1 +1,3 @@
-export * from "./WebView";
+/** @format */
+
+export * from './WebView';
