@@ -1,4 +1,7 @@
 export const Screens = {
+  // ---plop
+ NewsFeed: 'NewsFeedScreen',
+  News: 'NewsScreen',
   Characters: "CharactersScreen",
   CharactersDetails: "CharactersDetailsScreen",
   Feed: "FeedScreen",
