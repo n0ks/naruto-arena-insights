@@ -3,9 +3,8 @@ import { View, Image } from "react-native";
 // @ts-ignore
 import gif from "../../../assets/images/sharingan_loading.gif";
 
-interface Props {}
 
-export const Loading: React.SFC<Props> = () => {
+export const Loading: React.SFC = () => {
   return (
     <View
       style={{ flex: 1, justifyContent: "center", backgroundColor: "#fff" }}
