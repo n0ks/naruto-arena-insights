@@ -1,6 +1,6 @@
 {
   "name": "NarutoArenaApp",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "private": true,
   "scripts": {
     "android": "react-native run-android --variant=devDebug",
@@ -40,7 +40,6 @@
     "react-native-fast-image": "^7.0.2",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-linear-gradient": "^2.5.6",
-    "react-native-reanimated": "^1.2.0",
     "react-native-render-html": "^4.1.2",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^9.9.5",
