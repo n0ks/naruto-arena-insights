@@ -939,26 +939,29 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
-"@react-native-firebase/app-types@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-0.4.3.tgz#9c31bf02032b089d598a5f98495d794ae560fcbd"
-  integrity sha512-rw+GX9tNsr9v3oq4jNaZ0di85TGuXTTYHTPN1pmonl4czO3J9PZON8Ouse/4bxY5wouZ9/yR5+eO5KTW+34EpA==
+"@react-native-firebase/app-types@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.0.1.tgz#567713ee3997eb1d5aa80e535af96b0314655809"
+  integrity sha512-8tY5bCpR2nenAEgrYxcnajPcKWjhNxLUsO+F0IF6eJkKINcEOL65YPk3CCcBzvgSMdN53lOuPgQXZ+TJ2bc7iw==
 
-"@react-native-firebase/app@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-0.4.3.tgz#3442d87053f3e1bdf48616d4c1be60442fa70b1b"
-  integrity sha512-Fucg1agqQzW9iY1UH8QyGWPSSR/e7J4evOpJxLAK/4A0eArFAU0ZJUxYgBH2v994WJs92RBfTEVrgz7cVwOXVA==
+"@react-native-firebase/app@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-6.0.1.tgz#6c802750a7a1f6aedfa1bbb03be2b5564a2eae40"
+  integrity sha512-7wETRkGapkS3OkukPEVlWsjjuNeF2GcpJM3i13JPqRE4p4hEmsSklaADrKbeTiytlVIe+UDxZL7EF3EnBZco+g==
   dependencies:
-    "@react-native-firebase/app-types" "0.4.3"
+    "@react-native-firebase/app-types" "6.0.1"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/firestore@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-0.4.3.tgz#2fe2557f7b1870a60124ca02791c3906fe3acc00"
-  integrity sha512-MjFIkKBvnLz6VrgFyPYvh7YPJyldEH3lymuAUXadCw3fZrw1478rSbquI8Vz3GZqx8rccxpyqAo3xqGaLC4k1A==
-  dependencies:
-    "@react-native-firebase/app-types" "0.4.3"
+"@react-native-firebase/firestore@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-6.0.1.tgz#6520d0e7919667c72f9d98bba6ac4515c25d8d86"
+  integrity sha512-J9xaAbLCn2jVIQK9r3/Ie06k16mhr+2K3iJZazthoS7DpB+hyoEL182tvlCieo+1S0dNemcyZeMDQcCAGqG96w==
+
+"@react-native-firebase/messaging@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-6.0.1.tgz#829ac449adab71249f20fdde7ddd7a7a5b6e457c"
+  integrity sha512-gXoZ+OjvKb64nFBmDR0Md5UIalWxQ0M0BwSlB5GCTKvzvDRMwNwgRzz43IDfKeHwisM+liAKlhBIBsk/IrNY5w==
 
 "@react-navigation/core@~3.5.1":
   version "3.5.1"
