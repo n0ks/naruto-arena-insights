@@ -37,7 +37,6 @@ export const WebViewDemo = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log('webref', webref);
       // @ts-ignore
       webref.current.injectJavaScript(run);
     }, 1000);

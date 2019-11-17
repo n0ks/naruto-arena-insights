@@ -13,12 +13,17 @@ import {
   View,
   Animated,
 } from 'react-native';
-import { SearchableBar, Loading } from '../../components';
+import { SearchableBar, Loading, BannerAdsSmart } from '../../components';
 import Analytics from 'appcenter-analytics';
 import Device from 'react-native-device-info';
 // @ts-ignore
 import gif from '../../../assets/images/sharingan_loading.gif';
-import { NavigationType, ICharacters, Screens } from '../../utils';
+import {
+  NavigationType,
+  ICharacters,
+  Screens,
+  requestPermission,
+} from '../../utils';
 import FastImage from 'react-native-fast-image';
 
 export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
@@ -52,7 +57,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
       //   setLoading(false);
       //   return;
       // }
-
       let char: any[] = [];
       firestore()
         .collection('characters')
@@ -60,7 +64,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         .get()
         .then(data => {
           data.docs.forEach(doc => {
-            // @ts-ignore
             char.push({ ...doc!.data()!.character });
           });
 
@@ -74,23 +77,27 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     };
 
     getCharacters();
+    requestPermission();
   }, []);
 
   const navigateToDetails = async item => {
     let deviceInfo = {
       deviceName: await Device.getDeviceName(),
       sysName: await Device.getSystemName(),
+      version: await Device.getVersion(),
     };
+
     Analytics.trackEvent('go_to_char_details', {
       name: item.name,
       ...deviceInfo,
     });
+
     navigation.navigate(Screens.CharactersDetails, { item });
   };
 
   const renderItem = ({ item }: { item: ICharacters }) => {
     return (
-      <View style={{ zIndex: 1000 }}>
+      <View>
         <TouchableOpacity
           onPress={() => navigateToDetails(item)}
           style={styles.border}
@@ -121,8 +128,6 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
     return <Loading />;
   }
 
-  const Footer = () => <View style={{ paddingVertical: 50 }} />;
-
   return (
     <SafeAreaView>
       <SearchableBar
@@ -133,6 +138,8 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
       <FlatList
         bounces={false}
         data={queryCharacters}
+        ListFooterComponent={BannerAdsSmart}
+        ListHeaderComponent={BannerAdsSmart}
         keyboardDismissMode="interactive"
         scrollEventThrottle={16}
         onScroll={Animated.event([
@@ -143,14 +150,12 @@ export const Characters: React.SFC<NavigationType> = ({ navigation }) => {
         ListHeaderComponentStyle={{ backgroundColor: 'transparent' }}
         keyExtractor={(_, i) => i.toString()}
         contentContainerStyle={{
-          marginTop: SEARCH_HEIGHT,
-          zIndex: -100,
+          paddingTop: SEARCH_HEIGHT,
         }}
         columnWrapperStyle={styles.flatList}
         numColumns={3}
         renderItem={renderItem}
         initialNumToRender={5}
-        ListFooterComponent={Footer}
       />
     </SafeAreaView>
   );

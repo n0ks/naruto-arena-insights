@@ -1,15 +1,13 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Image } from 'react-native';
-import { ListItem, colors, Card, Icon } from 'react-native-elements';
-import { NavigationType, Clans } from '../../utils';
+import { View, FlatList } from 'react-native';
+import { ListItem, Card, Icon } from 'react-native-elements';
+import { NavigationType, Clans } from '@app/utils';
 import firestore from '@react-native-firebase/firestore';
-import { Loading } from '../../components/Loading';
+import { BannerAdsLarge, Loading } from '@app/components';
 
-interface Props {}
-
-export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
+export const ClanLadder: React.SFC<NavigationType> = () => {
   const [clans, setClans] = useState<Clans[]>();
 
   useEffect(() => {
@@ -64,6 +62,8 @@ export const ClanLadder: React.SFC<NavigationType> = ({ navigation }) => {
         data={clans}
         renderItem={renderItem}
         contentContainerStyle={{ backgroundColor: '#f5f5f5' }}
+        ListFooterComponent={BannerAdsLarge}
+        ListHeaderComponent={BannerAdsLarge}
       />
     </View>
   );

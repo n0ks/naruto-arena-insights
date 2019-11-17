@@ -25,17 +25,19 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
-    "@react-native-firebase/app": "^6.0.1",
-    "@react-native-firebase/firestore": "^6.0.1",
-    "@react-native-firebase/messaging": "^6.0.1",
+    "@react-native-firebase/admob": "^6.0.3",
+    "@react-native-firebase/app": "^6.0.3",
+    "@react-native-firebase/firestore": "^6.0.3",
+    "@react-native-firebase/messaging": "^6.0.3",
     "appcenter": "^2.3.0",
     "appcenter-analytics": "^2.3.0",
     "appcenter-crashes": "^2.3.0",
     "chance": "^1.1.0",
     "cheerio": "^1.0.0-rc.3",
     "fuse.js": "^3.4.5",
+    "moment": "^2.24.0",
     "react": "16.9.0",
-    "react-native": "0.61.1",
+    "react-native": "^0.61.4",
     "react-native-device-info": "^3.1.4",
     "react-native-elements": "^1.2.0",
     "react-native-fast-image": "^7.0.2",
@@ -71,7 +73,7 @@
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.7.0-beta"
+    "typescript": "^3.7.2"
   },
   "jest": {
     "preset": "react-native"

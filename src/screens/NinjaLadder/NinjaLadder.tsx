@@ -9,16 +9,18 @@ import {
   ImageBackground,
 } from 'react-native';
 import { NavigationType, Users } from '../../utils';
-import { ListItem, Icon, colors } from 'react-native-elements';
+import { ListItem, Icon } from 'react-native-elements';
 import { Loading } from '../../components/Loading';
 import firestore from '@react-native-firebase/firestore';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './NinjaLadder.styles';
+import { BannerAdsLarge } from '@app/components';
 
 const BG_IMAGE = {
   ['Jinchuuriki']: require('../../../assets/images/jinchuuriki_bg.png'),
   ['Akatsuki']: require('../../../assets/images/akatsuki_bg.png'),
   ['Sannin']: require('../../../assets/images/sannin_bg.png'),
+  ['Kage']: require('../../../assets/images/kage_bg.png'),
 };
 
 export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
@@ -113,6 +115,8 @@ export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
           backgroundColor: '#f5f5f5',
           alignItems: 'center',
         }}
+        ListFooterComponent={BannerAdsLarge}
+        ListHeaderComponent={BannerAdsLarge}
       />
     </View>
   );

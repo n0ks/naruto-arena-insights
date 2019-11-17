@@ -1,12 +1,12 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { Streak } from '../../utils';
-import { ListItem, colors } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import firestore from '@react-native-firebase/firestore';
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
-import { Loading } from '../../components';
+import { Loading, BannerAdsSmart } from '../../components';
 
 interface NavigationParams {
   ladderType: 'streakladder' | 'winladder';
@@ -17,8 +17,6 @@ type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
 interface Props {
   navigation: Navigation;
 }
-
-let a: Navigation;
 
 export const TopLadder: React.SFC<Props> = ({ navigation }) => {
   const [ladder, setLadder] = useState();
@@ -60,12 +58,11 @@ export const TopLadder: React.SFC<Props> = ({ navigation }) => {
     return <Loading />;
   }
   return (
-    <View>
-      <FlatList
-        data={ladder}
-        renderItem={renderItem}
-        contentContainerStyle={{ padding: 16 }}
-      />
-    </View>
+    <FlatList
+      data={ladder}
+      renderItem={renderItem}
+      ListFooterComponent={BannerAdsSmart}
+      ListHeaderComponent={BannerAdsSmart}
+    />
   );
 };

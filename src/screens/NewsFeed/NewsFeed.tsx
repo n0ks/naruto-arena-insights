@@ -1,56 +1,62 @@
-import React, { useEffect, useState } from "react";
-import {  FlatList } from "react-native";
-import { NavigationType, Colors, Screens } from "../../utils";
-import { Loading} from "@app/components";
-import { ListItem } from "react-native-elements";
-import firestore from "@react-native-firebase/firestore";
+/** @format */
+
+import React, { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
+import { NavigationType, Colors, Screens } from '@app/utils';
+import { Loading, BannerAdsLarge } from '@app/components';
+import { ListItem } from 'react-native-elements';
+import firestore from '@react-native-firebase/firestore';
+import moment from 'moment';
 
 export const NewsFeed: React.SFC<NavigationType> = ({ navigation }) => {
   const [html, setHtml] = useState([]);
+
   useEffect(() => {
     let content = [];
 
     const getNews = async () => {
       let data = await firestore()
-        .collection("news")
-        .orderBy("index")
-        .get()
+        .collection('news')
+        .orderBy('index')
+        .get();
 
-        data.forEach(doc => {
-          content.push(doc.data());
-        });
+      data.forEach(doc => {
+        content.push(doc.data());
+      });
 
       setHtml(content);
-    }
-    getNews()
+    };
+
+    getNews();
   }, []);
 
   const renderItem = ({ item }) => {
     return (
       <ListItem
-        title={item.title}
-        subtitle={`${item.date} by ${item.author}`}
-        key={Math.random.toString()}
-        titleStyle={{fontSize: 18, color: Colors.orange}}
-        subtitleStyle={{color: Colors.blue}}
-        onPress={() => navigation.navigate(Screens.News, {item})}
         chevron
         topDivider
+        title={item.title}
+        subtitle={`${moment(item.date).format('DD/MM/YY HH:mm')} by ${
+          item.author
+        }`}
+        key={Math.random.toString()}
+        titleStyle={{ fontSize: 18, color: Colors.orange }}
+        subtitleStyle={{ color: Colors.blue }}
+        onPress={() => navigation.navigate(Screens.News, { item })}
       />
-      
-    );  
+    );
   };
 
-  if(html.length === 0){
-    return (<Loading />)
+  if (html?.length === 0) {
+    return <Loading />;
   }
 
   return (
-      <FlatList
-        data={html}
-        renderItem={renderItem}
-        keyExtractor={({ __, index }) => index?.toString()}
-      />
-  )
-  
+    <FlatList
+      data={html}
+      renderItem={renderItem}
+      keyExtractor={({ _, index }) => index?.toString()}
+      ListFooterComponent={BannerAdsLarge}
+    />
+  );
 };
