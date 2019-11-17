@@ -17,11 +17,11 @@ export const NewsFeed: React.SFC<NavigationType> = ({ navigation }) => {
     const getNews = async () => {
       let data = await firestore()
         .collection('news')
-        .orderBy('index')
+        .orderBy('news.date', 'desc')
         .get();
 
       data.forEach(doc => {
-        content.push(doc.data());
+        content.push(doc.data().news);
       });
 
       setHtml(content);
