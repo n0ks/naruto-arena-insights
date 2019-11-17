@@ -36,7 +36,10 @@ desc "Bump minor"
   lane :deploy do
 
     # changelog_from_git_commits
+
     version_patch 
+    
+    sh("yarn version --patch")
     
     begin
 

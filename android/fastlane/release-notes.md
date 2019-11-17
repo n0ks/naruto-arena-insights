@@ -2,4 +2,4 @@
 
 # CHANGES
 
-- Finalizado feed de notícias
+- Fix news feed
