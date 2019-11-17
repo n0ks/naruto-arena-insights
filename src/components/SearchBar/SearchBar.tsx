@@ -15,49 +15,47 @@ export const SearchableBar: React.SFC<Props> = ({
   searchY,
 }) => {
   return (
-    <SafeAreaView>
-      <Animated.View
-        style={{
-          transform: [{ translateY: searchY }],
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 1000,
-        }}
-      >
-        {
-          // @ts-ignore
-          <SearchBar
-            placeholder="Search for ninja name..."
-            onChangeText={updateQuery}
-            containerStyle={{
-              backgroundColor: '#8240C4',
-              zIndex: 1001,
-            }}
-            placeholderTextColor={colors.greyOutline}
-            inputStyle={{ color: 'white' }}
-            clearIcon={{ color: '#fff' }}
-            searchIcon={{
-              color: '#fff',
+    <Animated.View
+      style={{
+        transform: [{ translateY: searchY }],
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+      }}
+    >
+      {
+        // @ts-ignore
+        <SearchBar
+          placeholder="Search for ninja name..."
+          onChangeText={updateQuery}
+          containerStyle={{
+            backgroundColor: '#8240C4',
+            zIndex: 1001,
+          }}
+          placeholderTextColor={colors.greyOutline}
+          inputStyle={{ color: 'white' }}
+          clearIcon={{ color: '#fff' }}
+          searchIcon={{
+            color: '#f5f5f5',
+            backgroundColor: 'transparent',
+          }}
+          cancelIcon={{ color: '#fff' }}
+          cancelButtonProps={{
+            style: {
               backgroundColor: 'transparent',
-            }}
-            cancelIcon={{ color: '#fff' }}
-            cancelButtonProps={{
-              style: {
-                backgroundColor: 'transparent',
-                borderRadius: 20,
-              },
-            }}
-            value={queryText}
-            platform={Platform.select({
-              ios: 'ios',
-              android: 'android',
-            })}
-            autoCorrect={false}
-          />
-        }
-      </Animated.View>
-    </SafeAreaView>
+              borderRadius: 20,
+            },
+          }}
+          value={queryText}
+          platform={Platform.select({
+            ios: 'ios',
+            android: 'android',
+          })}
+          autoCorrect={false}
+        />
+      }
+    </Animated.View>
   );
 };
