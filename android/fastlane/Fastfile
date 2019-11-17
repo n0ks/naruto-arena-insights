@@ -22,7 +22,7 @@ desc "Bump minor"
   appcenter_upload(
     api_token: ENV["APP_CENTER_API_TOKEN"],
     owner_name: "rodrigo.m",
-    destinations: "noobs",
+    destinations: "noobs,na-boards",
     app_name: "NarutoArena",
     apk: "app/build/outputs/apk/dev/release/app-dev-arm64-v8a-release.apk",
     app_os: 'Android',
