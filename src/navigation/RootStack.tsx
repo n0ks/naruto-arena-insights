@@ -30,7 +30,7 @@ const TAB_ICONS = {
 const defaultTabIcon = (focused, screen) => (
   <View
     style={{
-      backgroundColor: focused ? Colors.orange : colors.grey5,
+      backgroundColor: focused ? Colors.orangeLight : colors.grey5,
       borderRadius: 24,
     }}
   >
@@ -125,7 +125,6 @@ const LadderStack = createStackNavigator(
     [Screens.Rankings]: {
       screen: Rankings,
       navigationOptions: {
-        // title: "Ladders",
         header: null,
       },
     },
