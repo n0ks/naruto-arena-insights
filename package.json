@@ -1,6 +1,6 @@
 {
   "name": "NarutoArenaApp",
-  "version": "0.0.12",
+  "version": "0.0.15",
   "private": true,
   "scripts": {
     "android": "react-native run-android --variant=devDebug",
@@ -10,7 +10,8 @@
     "lint": "tslint --project ./tsconfig.json",
     "plop": "plop",
     "fast:android": "cd ./android && fastlane",
-    "prettier": "prettier --write 'src/**/*.{ts,tsx,js}'"
+    "prettier": "prettier --write 'src/**/*.{ts,tsx,js}'",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "husky": {
     "hooks": {
