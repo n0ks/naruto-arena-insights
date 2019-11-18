@@ -38,8 +38,8 @@ export default StyleSheet.create<Styles>({
   },
   sub: {
     color: colors.grey5,
-    fontFamily: 'Coves-Light',
-    fontSize: 18,
+    fontFamily: 'SFProDisplay-Regular',
+    fontSize: 12,
   },
   listItemContainer: {
     backgroundColor: 'transparent',

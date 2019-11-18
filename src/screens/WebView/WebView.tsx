@@ -63,7 +63,7 @@ export const WebViewDemo = () => {
               size={48}
               type="material-community"
             />
-            <DText style={{ fontFamily: 'Coves-Light' }}>
+            <DText style={{ fontFamily: 'SFProDisplay-Regular' }}>
               {`Ooops... an error has occurred\n${errName}`}
             </DText>
           </View>

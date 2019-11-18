@@ -18,8 +18,8 @@ export const DText: React.SFC<Props> = ({
       style={[
         {
           color: colors.grey2,
-          fontFamily: type === 'light' ? 'Coves-Light' : 'Coves-Bold',
-          fontSize: 20,
+          fontFamily: type === 'light' ? 'SFProDisplay-Regular' : 'Coves-Bold',
+          fontSize: 16,
         },
         style,
       ]}
