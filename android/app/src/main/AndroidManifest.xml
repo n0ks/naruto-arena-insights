@@ -15,7 +15,9 @@
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_color"
         android:resource="@color/app_primary" />
-
+      <meta-data
+        android:name="com.google.android.gms.ads.ca-app-pub-0398075440946116~2835513728"
+        android:value="ca-app-pub-0398075440946116~2835513728"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
