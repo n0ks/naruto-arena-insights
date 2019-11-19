@@ -5,9 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import "AppDelegate.h"
 @import Firebase;
-#import <React/RCTBridge.h>
+#import "AppDelegate.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <AppCenterReactNative.h>
