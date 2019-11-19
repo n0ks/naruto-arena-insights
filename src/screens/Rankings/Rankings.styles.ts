@@ -8,15 +8,16 @@ interface Styles {
 
 export default StyleSheet.create<Styles>({
   container: {
-    flex: 1,
     backgroundColor: '#f5f5f5',
+    height: '100%',
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
   },
   linearBtn: {
-    height: Dimensions.get('window').height / 4 - 16,
-    borderBottomColor: '#fff',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    height: Dimensions.get('window').height / 4,
+    borderColor: '#fff',
+    borderTopWidth: StyleSheet.hairlineWidth,
     justifyContent: 'center',
-    alignContent: 'center',
     alignItems: 'center',
   },
 });
