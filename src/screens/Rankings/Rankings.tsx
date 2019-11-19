@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import {
   NavigationType,
@@ -35,9 +35,9 @@ const LinearButton = (from, to, text, onPress) => (
 );
 
 export const Rankings: React.SFC<NavigationType> = ({ navigation }) => {
-  useEffect(() => {
+  navigation.addListener('didFocus', () => {
     loadIntersitialAd();
-  }, []);
+  });
 
   return (
     <View style={styles.container}>

@@ -55,7 +55,7 @@ export const NewsFeed: React.SFC<NavigationType> = ({ navigation }) => {
     <FlatList
       data={html}
       renderItem={renderItem}
-      keyExtractor={({ _, index }) => index?.toString()}
+      keyExtractor={(_, index) => index?.toString()}
       ListFooterComponent={BannerAdsLarge}
     />
   );
