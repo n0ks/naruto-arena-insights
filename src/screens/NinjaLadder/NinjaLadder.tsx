@@ -65,40 +65,44 @@ export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
     />
   );
 
-  const gradientRenderItem = ({ item }: { item: Users }) => {
+  const gradientRenderItem = ({ item, index }: { item: Users; index }) => {
     return (
-      <LinearGradient
-        colors={['#551892', '#8240C4']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.linear}
-      >
-        <View
-          style={{
-            backgroundColor: 'transparent',
-            zIndex: 1,
-          }}
+      <>
+        {index > 2 && index % 15 === 0 && <BannerAdsLarge />}
+
+        <LinearGradient
+          colors={['#551892', '#8240C4']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.linear}
         >
-          <View>
-            {CustomListItem(
-              `${item.username.toUpperCase()}`,
-              '',
-              {
-                fontSize: 20,
-              },
-              `${item.rank} - LV ${item.level}`
-            )}
-            {CustomListItem(`WL :  ${item.wins}  /  ${item.loses}`)}
-            {CustomListItem(`XP :  ${item.exp}`)}
-            {CustomListItem(`Streak ${item.streak}`)}
+          <View
+            style={{
+              backgroundColor: 'transparent',
+              zIndex: 1,
+            }}
+          >
+            <View>
+              {CustomListItem(
+                `${item.username.toUpperCase()}`,
+                '',
+                {
+                  fontSize: 20,
+                },
+                `${item.rank} - LV ${item.level}`
+              )}
+              {CustomListItem(`WL :  ${item.wins}  /  ${item.loses}`)}
+              {CustomListItem(`XP :  ${item.exp}`)}
+              {CustomListItem(`Streak ${item.streak}`)}
+            </View>
           </View>
-        </View>
-        <ImageBackground
-          source={BG_IMAGE[item.rank]}
-          imageStyle={styles.imgBgImgStyle}
-          style={styles.imgBg}
-        />
-      </LinearGradient>
+          <ImageBackground
+            source={BG_IMAGE[item.rank]}
+            imageStyle={styles.imgBgImgStyle}
+            style={styles.imgBg}
+          />
+        </LinearGradient>
+      </>
     );
   };
 
@@ -116,7 +120,6 @@ export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
           alignItems: 'center',
         }}
         ListFooterComponent={BannerAdsLarge}
-        ListHeaderComponent={BannerAdsLarge}
       />
     </View>
   );
