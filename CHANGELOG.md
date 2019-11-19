@@ -1,19 +1,25 @@
 <!-- @format -->
 
-## [0.0.15](https://github.com/n0ks/naruto-arena-insights/compare/0.0.10...0.0.15) (2019-11-17)
+## [0.0.16](https://github.com/n0ks/naruto-arena-insights/compare/0.0.10...0.0.16) (2019-11-19)
 
 ### Bug Fixes
 
 - news feed ([0535f61](https://github.com/n0ks/naruto-arena-insights/commit/0535f61ec4cd6e8d0ff306f4d9e9abd4d2ca445f))
+- safe area searchbar ([f935a7c](https://github.com/n0ks/naruto-arena-insights/commit/f935a7ce339a18eab71cd5f7b564cd60e9e52884))
 - searchbar scroll issue ([c89c1bc](https://github.com/n0ks/naruto-arena-insights/commit/c89c1bc4fdaafc42b0bd04ec2ea3197f0a6aed0f))
 
 ### Features
 
-- **#171ugq:** news feed & news ([a439935](https://github.com/n0ks/naruto-arena-insights/commit/a43993507f2aad87503a4f64ef5c226b883ee921)), closes [#171](https://github.com/n0ks/naruto-arena-insights/issues/171)
-- config ios appcenter ([8c8838c](https://github.com/n0ks/naruto-arena-insights/commit/8c8838c645700dc18b6ab3ecf280c50a61bb3b54))
-- husky & prettier pre-commit hooks ([8ed2fd2](https://github.com/n0ks/naruto-arena-insights/commit/8ed2fd2e643f2a82b0a06f961837f4c7252dcee4))
 - integrate ads ([b3a81d9](https://github.com/n0ks/naruto-arena-insights/commit/b3a81d9d8bd8a4a711c05d8c8ca350a4c5e630a4))
+- **#171ugq:** news feed & news ([a439935](https://github.com/n0ks/naruto-arena-insights/commit/a43993507f2aad87503a4f64ef5c226b883ee921)), closes [#171](https://github.com/n0ks/naruto-arena-insights/issues/171)
+- ads ninja ladder ([ca0492d](https://github.com/n0ks/naruto-arena-insights/commit/ca0492d5054c1c1377ff7a2c6af8e3d005c1285f))
+- ads with remote config ([7e65e31](https://github.com/n0ks/naruto-arena-insights/commit/7e65e319735212f0ca06bf46a154ae5a2be6fd6d))
+- config admob ios id ([4e99406](https://github.com/n0ks/naruto-arena-insights/commit/4e9940664ae983fc553b70bbf34b6c652bab9037))
+- config ios appcenter ([8c8838c](https://github.com/n0ks/naruto-arena-insights/commit/8c8838c645700dc18b6ab3ecf280c50a61bb3b54))
+- general ads screen cfg ([0c20760](https://github.com/n0ks/naruto-arena-insights/commit/0c2076088b2a04c35e7af39805976fc906034baa))
+- husky & prettier pre-commit hooks ([8ed2fd2](https://github.com/n0ks/naruto-arena-insights/commit/8ed2fd2e643f2a82b0a06f961837f4c7252dcee4))
 - ios appcenter ([125eabd](https://github.com/n0ks/naruto-arena-insights/commit/125eabd37f7569f92f36df8356b22050860ac65c))
+- manifest appid ([985f282](https://github.com/n0ks/naruto-arena-insights/commit/985f282cb5ef315c9a6c1c4857a99050f4c7fe6b))
 - more utils ([215f80b](https://github.com/n0ks/naruto-arena-insights/commit/215f80b1458257594b6931b9544231fbe93dfd1d))
 - news constant ([f4bf65e](https://github.com/n0ks/naruto-arena-insights/commit/f4bf65eb52f2116df6317eea66050014d29756b4))
 - notification icon ([6c083d8](https://github.com/n0ks/naruto-arena-insights/commit/6c083d88d005dcd34bf6617cf8c6ec1e246c1fb9))
