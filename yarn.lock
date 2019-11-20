@@ -1383,6 +1383,13 @@ appcenter-link-scripts@2.6.0:
     which "1.2.11"
     xcode "2.0.0"
 
+appcenter-push@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/appcenter-push/-/appcenter-push-2.6.0.tgz#b5a366b0d11f56ef5a953ab612477a94c93dea0b"
+  integrity sha512-kX/ITO8TI0nJ4Fd4NKFzxWWkBTrCodpBs5C0ieYEsZOABCB4BpnFHLT1xcfCQ8HJ3XJSpyu4PmZeZpKYGMGJbw==
+  dependencies:
+    appcenter "2.6.0"
+
 appcenter@2.6.0, appcenter@^2.3.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.6.0.tgz#999137c85d84f9584f2fe2660ca57b52541f1dc0"

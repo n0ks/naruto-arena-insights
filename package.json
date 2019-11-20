@@ -34,6 +34,7 @@
     "appcenter": "^2.3.0",
     "appcenter-analytics": "^2.3.0",
     "appcenter-crashes": "^2.3.0",
+    "appcenter-push": "^2.6.0",
     "chance": "^1.1.0",
     "cheerio": "^1.0.0-rc.3",
     "fuse.js": "^3.4.5",

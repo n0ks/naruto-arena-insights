@@ -13,8 +13,4 @@ export const requestPermission = async () => {
       await messaging().subscribeToTopic('news');
     }
   }
-
-  return messaging().onMessage(async remoteMessage => {
-    console.log('MESSAGE RECEIVED', remoteMessage);
-  });
 };

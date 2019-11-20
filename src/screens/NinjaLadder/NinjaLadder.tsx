@@ -113,6 +113,7 @@ export const NinjaLadder: React.SFC<NavigationType> = ({ navigation }) => {
         renderItem={gradientRenderItem}
         showsVerticalScrollIndicator
         ListHeaderComponent={BannerAdsLarge}
+        ListFooterComponent={() => <View style={{ paddingVertical: 50 }} />}
         ListHeaderComponentStyle={{
           paddingBottom: 50,
           justifyContent: 'center',
