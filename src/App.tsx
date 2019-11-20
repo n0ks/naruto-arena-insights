@@ -10,11 +10,11 @@ import Push from 'appcenter-push';
 import { NavigationActions } from 'react-navigation';
 
 YellowBox.ignoreWarnings([
-  // 'react-devtools agent got no connection',
-  // 'is deprecated',
-  // 'Warning: Failed prop type',
-  // 'VirtualizedLists',
-  // 'Warning: ',
+  'react-devtools agent got no connection',
+  'is deprecated',
+  'Warning: Failed prop type',
+  'VirtualizedLists',
+  'Warning: ',
 ]);
 
 (async () => {

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Avatar, Tile } from 'react-native-elements';
 import { View, SafeAreaView, ScrollView } from 'react-native';
-import { Chakra, DText } from '../../../components';
+import { Chakra, DText, BannerAdsSmart } from '../../../components';
 import styles from './CharacterDetails.styles';
 import { NavigationType, ICharacters } from '../../../utils/Interfaces';
 import FastImage from 'react-native-fast-image';
@@ -29,6 +29,7 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
         </DText>
         <View style={{ marginBottom: 200 }}>
           <DText style={styles.charDescStyle}>{character.description}</DText>
+          <BannerAdsSmart />
           {character.skills.map((skill, i) => (
             <Tile
               key={i}
@@ -66,6 +67,7 @@ export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
               </View>
             </Tile>
           ))}
+          <BannerAdsSmart />
         </View>
       </ScrollView>
     </SafeAreaView>
