@@ -33,7 +33,6 @@ export default StyleSheet.create({
     flexGrow: 1,
     flexDirection: 'column',
     height: '100%',
-    borderWidth: 2,
     borderRadius: 5,
   },
   skillClasses: {

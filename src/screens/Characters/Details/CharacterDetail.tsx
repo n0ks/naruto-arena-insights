@@ -7,9 +7,14 @@ import { Chakra, DText, BannerAdsSmart } from '../../../components';
 import styles from './CharacterDetails.styles';
 import { NavigationType, ICharacters } from '../../../utils/Interfaces';
 import FastImage from 'react-native-fast-image';
+import { loadIntersitialAd } from '@app/utils/ads';
 
 export const CharacterDetail: React.SFC<NavigationType> = ({ navigation }) => {
   const character: ICharacters = navigation.getParam('item');
+
+  navigation.addListener('didBlur', () => {
+    loadIntersitialAd();
+  });
 
   return (
     <SafeAreaView>
