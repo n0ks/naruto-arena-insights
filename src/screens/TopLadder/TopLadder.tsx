@@ -22,7 +22,7 @@ export const TopLadder: React.SFC<Props> = ({ navigation }) => {
   const [ladder, setLadder] = useState();
 
   const ladderType = navigation.getParam('ladderType');
-  const STREAK_TYPE = ladderType == 'winladder' ? 'Wins' : 'Streak';
+  const STREAK_TYPE = ladderType === 'winladder' ? 'Wins' : 'Streak';
   useEffect(() => {
     let ladderList = [];
     const getLadder = async () => {

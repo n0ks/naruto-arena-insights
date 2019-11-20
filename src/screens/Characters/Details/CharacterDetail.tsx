@@ -1,5 +1,4 @@
 /** @format */
-
 import React from 'react';
 import { Avatar, Tile } from 'react-native-elements';
 import { View, SafeAreaView, ScrollView } from 'react-native';

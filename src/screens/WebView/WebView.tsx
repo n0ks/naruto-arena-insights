@@ -1,5 +1,5 @@
 /** @format */
-
+// tslint:disable:no-console
 import React, { useEffect, useRef } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { colors, Icon } from 'react-native-elements';
@@ -73,7 +73,7 @@ export const WebViewDemo = () => {
         )}
         onHttpError={syntheticEvent => {
           const { nativeEvent } = syntheticEvent;
-
+          // @ts-ignore
           console.warn(
             'WebView received error status code: ',
             nativeEvent.statusCode

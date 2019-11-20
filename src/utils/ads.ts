@@ -1,4 +1,5 @@
 /** @format */
+// tslint:disable:no-console
 import {
   InterstitialAd,
   AdEventType,
@@ -31,6 +32,7 @@ export const loadIntersitialAd = async () => {
       }
     });
   } catch (err) {
+    // @ts-ignore
     console.log('err', err);
   }
 };
